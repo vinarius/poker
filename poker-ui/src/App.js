@@ -1,25 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import { StateProvider } from './components/StateProvider/stateProvider';
+import { SmallTable } from './components/Table/small';
+
+const viewportWidth = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+const viewportHeight = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+
+const [tableSize, setTableSize] = useState();
+
+/* 
+break points for viewport width
+320 - 500
+501 - 768
+769 - ?
+*/
+
+useEffect(() => {
+
+}, []);
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StateProvider>
+      <div className="App">
+        <SmallTable />
+      </div>
+    </StateProvider>
   );
 }
 
