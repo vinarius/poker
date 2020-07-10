@@ -6,11 +6,19 @@ export const MyContext = createContext();
 
 export const StateProvider = (props) => {
 
-    const defaultState = {};
+    const defaultState = {
+        tableSize: 'small'
+    };
 
     const [state, dispatch] = useReducer(myReducer, defaultState);
 
-    const providerValue = {};
+    const setTableSize = (newTableSize) => {
+        dispatch({ type: stateActions.SET_TABLE_SIZE, newTableSize });
+    };
+
+    const providerValue = {
+        setTableSize
+    };
 
     return (
         <MyContext.Provider value={providerValue}>
