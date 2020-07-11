@@ -1,7 +1,11 @@
+@import 'https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap';
+
 #root {
     height: 100%;
     width: 100%;
-    background-color: blue
+    background-color: blue;
+    font-family: 'Share Tech Mono', monospace;
+    color: #eee;
 }
 
 .App {
