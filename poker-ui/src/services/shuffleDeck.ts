@@ -1,4 +1,4 @@
-const convertToFaceCard = (value) => {
+const convertToFaceCard = (value: any): any => {
     switch(value) {
         case 9:
             return 'jack';
@@ -14,10 +14,10 @@ const convertToFaceCard = (value) => {
 };
 
 export default () => {
-    const newDeck = [];
-    const suits = ['spades', 'hearts', 'clubs', 'diamonds'];
+    const newDeck: any = [];
+    const suits: any = ['spades', 'hearts', 'clubs', 'diamonds'];
 
-    suits.forEach(suit => {
+    suits.forEach((suit: any) => {
         for (let i=0; i<13; i++) {
             const newCard = {
                 suit,
@@ -28,8 +28,8 @@ export default () => {
         }
     });
 
-    const shuffledDeck = [];
-    const shuffle = (deck) => {
+    const shuffledDeck: any = [];
+    const shuffle = (deck: any) => {
         const randomCard = Math.floor(Math.random() * deck.length);
         const card = deck.splice(randomCard, 1)[0];
         shuffledDeck.push(card);
