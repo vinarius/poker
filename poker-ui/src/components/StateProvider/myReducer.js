@@ -1,9 +1,12 @@
 import stateActions from './stateActions';
+import ShuffleDeck from '../../services/shuffleDeck';
 
 export default (state, action) => {
     switch(action.type) {
         case stateActions.SET_TABLE_SIZE:
-            setTableSize(state, action.newTableSize);
+            return setTableSize(state, action.newTableSize);
+        case stateActions.SHUFFLE_DECK:
+            return shuffleDeck(state);
         default:
             return state;
     }
@@ -12,4 +15,9 @@ export default (state, action) => {
 const setTableSize = (state, newTableSize) => ({
     ...state,
     tableSize: newTableSize
+});
+
+const shuffleDeck = (state) => ({
+    ...state,
+    deck: ShuffleDeck()
 });

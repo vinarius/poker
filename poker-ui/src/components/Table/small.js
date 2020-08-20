@@ -34,16 +34,16 @@ export const SmallTable = () => {
                         <p>Joey</p>
                         <p>$7,345.00</p>
                         <div className="card-container">
-                            <img className="card-image" src={playerOneCardOne} height={cardHeight} />
-                            <img className="card-image" src={playerOneCardTwo} height={cardHeight} />
+                            <img alt="playing card" className="card-image" src={playerOneCardOne} height={cardHeight} />
+                            <img alt="playing card" className="card-image" src={playerOneCardTwo} height={cardHeight} />
                         </div>
                     </div>
                     <div className="table-seat">
                         <p>Phil</p>
                         <p>$17,543.00</p>
                         <div className="card-container">
-                            <img className="card-image" src={playerTwoCardOne} height={cardHeight} />
-                            <img className="card-image" src={playerTwoCardTwo} height={cardHeight} />
+                            <img alt="playing card" className="card-image" src={playerTwoCardOne} height={cardHeight} />
+                            <img alt="playing card" className="card-image" src={playerTwoCardTwo} height={cardHeight} />
                         </div>
                     </div>
                 </div>
@@ -53,16 +53,16 @@ export const SmallTable = () => {
                             <p>Cole</p>
                             <p>$120,250.00</p>
                         <div className="card-container">
-                            <img className="card-image" src={playerThreeCardOne} height={cardHeight} />
-                            <img className="card-image" src={playerThreeCardTwo} height={cardHeight} />
+                            <img alt="playing card" className="card-image" src={playerThreeCardOne} height={cardHeight} />
+                            <img alt="playing card" className="card-image" src={playerThreeCardTwo} height={cardHeight} />
                         </div>
                         </div>
                         <div className="table-side-seat">
                             <p>Ryan</p>
                             <p>$250.00</p>
                         <div className="card-container">
-                            <img className="card-image" src={playerFourCardOne} height={cardHeight} />
-                            <img className="card-image" src={playerFourCardTwo} height={cardHeight} />
+                            <img alt="playing card" className="card-image" src={playerFourCardOne} height={cardHeight} />
+                            <img alt="playing card" className="card-image" src={playerFourCardTwo} height={cardHeight} />
                         </div>
                         </div>
                     </div>
@@ -77,34 +77,34 @@ export const SmallTable = () => {
                             <p>Crystal</p>
                             <p>$10,250.00</p>
                         <div className="card-container">
-                            <img className="card-image" src={playerFiveCardOne} height={cardHeight} />
-                            <img className="card-image" src={playerFiveCardTwo} height={cardHeight} />
+                            <img alt="playing card" className="card-image" src={playerFiveCardOne} height={cardHeight} />
+                            <img alt="playing card" className="card-image" src={playerFiveCardTwo} height={cardHeight} />
                         </div>
                         </div>
                         <div className="table-side-seat">
                             <p>Lauren</p>
                             <p>$13,737.00</p>
                         <div className="card-container">
-                            <img className="card-image" src={playerSixCardOne} height={cardHeight} />
-                            <img className="card-image" src={playerSixCardTwo} height={cardHeight} />
+                            <img alt="playing card" className="card-image" src={playerSixCardOne} height={cardHeight} />
+                            <img alt="playing card" className="card-image" src={playerSixCardTwo} height={cardHeight} />
                         </div>
                         </div>
                     </div>
                 </div>
                 <div className="flex-row">
                     <div className="card-container">
-                        <img src={riverCardOne} className="river-card playing-card" height={cardHeight} />
-                        <img src={riverCardTwo} className="river-card playing-card" height={cardHeight} />
-                        <img src={riverCardThree} className="river-card playing-card" height={cardHeight} />
-                        <img src={riverCardFour} className="river-card playing-card" height={cardHeight} />
-                        <img src={riverCardFive} className="river-card playing-card" height={cardHeight} />
+                        <img alt="playing card" src={riverCardOne} className="river-card playing-card" height={cardHeight} />
+                        <img alt="playing card" src={riverCardTwo} className="river-card playing-card" height={cardHeight} />
+                        <img alt="playing card" src={riverCardThree} className="river-card playing-card" height={cardHeight} />
+                        <img alt="playing card" src={riverCardFour} className="river-card playing-card" height={cardHeight} />
+                        <img alt="playing card" src={riverCardFive} className="river-card playing-card" height={cardHeight} />
                     </div>
                 </div>
                 <div className="player-info-container">
                     <div className="display-flex">
                         <div className="padding-seven-half-top-px">
-                            <img src={userCardOne} className="playing-card" height={cardHeight} />
-                            <img src={userCardTwo} className="playing-card" height={cardHeight} />
+                            <img alt="playing card" src={userCardOne} className="playing-card" height={cardHeight} />
+                            <img alt="playing card" src={userCardTwo} className="playing-card" height={cardHeight} />
                         </div>
                         <div className="padding-seven-half-top-px">
                             <button>Check</button>
