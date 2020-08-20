@@ -1,5 +1,31 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './small.css';
+import { MyContext } from '../StateProvider/stateProvider';
+import convertToCardImageString from '../../services/convertToCardImageString';
+
+
+
+// import userCardOne from test;
+// import userCardTwo from `../../assets/Playing_Cards/${convertToCardImageString(deck[1])}.png`;
+
+// import riverCardOne from `../../assets/Playing_Cards/${convertToCardImageString(deck[2])}.png`;
+// import riverCardTwo from `../../assets/Playing_Cards/${convertToCardImageString(deck[3])}.png`;
+// import riverCardThree from `../../assets/Playing_Cards/${convertToCardImageString(deck[4])}.png`;
+// import riverCardFour from `../../assets/Playing_Cards/${convertToCardImageString(deck[5])}.png`;
+// import riverCardFive from `../../assets/Playing_Cards/${convertToCardImageString(deck[6])}.png`;
+
+// import playerOneCardOne from `../../assets/Playing_Cards/${convertToCardImageString(deck[7])}.png`;
+// import playerOneCardTwo from `../../assets/Playing_Cards/${convertToCardImageString(deck[8])}.png`;
+// import playerTwoCardOne from `../../assets/Playing_Cards/${convertToCardImageString(deck[9])}.png`;
+// import playerTwoCardTwo from `../../assets/Playing_Cards/${convertToCardImageString(deck[10])}.png`;
+// import playerThreeCardOne from `../../assets/Playing_Cards/${convertToCardImageString(deck[11])}.png`;
+// import playerThreeCardTwo from `../../assets/Playing_Cards/${convertToCardImageString(deck[12])}.png`;
+// import playerFourCardOne from `../../assets/Playing_Cards/${convertToCardImageString(deck[13])}.png`;
+// import playerFourCardTwo from `../../assets/Playing_Cards/${convertToCardImageString(deck[14])}.png`;
+// import playerFiveCardOne from `../../assets/Playing_Cards/${convertToCardImageString(deck[15])}.png`;
+// import playerFiveCardTwo from `../../assets/Playing_Cards/${convertToCardImageString(deck[16])}.png`;
+// import playerSixCardOne from `../../assets/Playing_Cards/${convertToCardImageString(deck[17])}.png`;
+// import playerSixCardTwo from `../../assets/Playing_Cards/${convertToCardImageString(deck[18])}.png`;
 
 import userCardOne from '../../assets/Playing_Cards/AC.png';
 import userCardTwo from '../../assets/Playing_Cards/AS.png';
@@ -22,6 +48,11 @@ import playerFiveCardOne from '../../assets/Playing_Cards/5D.png';
 import playerFiveCardTwo from '../../assets/Playing_Cards/6D.png';
 import playerSixCardOne from '../../assets/Playing_Cards/JS.png';
 import playerSixCardTwo from '../../assets/Playing_Cards/QS.png';
+const { deck } = useContext(MyContext);
+console.log('deck from MyContext:', deck);
+
+const test = `../../assets/Playing_Cards/${convertToCardImageString(deck[0])}.png`;
+console.log('test', test);
 
 export const SmallTable = () => {
     const cardHeight = "60";
