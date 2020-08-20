@@ -1,25 +1,32 @@
-const convertToFaceCard = (value: any): any => {
+import { ICard, Suit, FaceCardValue, NumericValue } from '../interfaces/card';
+
+const convertToFaceCard = (value: number): FaceCardValue | NumericValue => {
     switch(value) {
         case 9:
-            return 'jack';
+            return FaceCardValue.jack;
         case 10:
-            return 'queen';
+            return FaceCardValue.queen;
         case 11:
-            return 'king';
+            return FaceCardValue.king;
         case 12:
-            return 'ace';
+            return FaceCardValue.ace;
         default:
-            return (value + 2).toString();
+            return value + 2;
     }
 };
 
 export default () => {
-    const newDeck: any = [];
-    const suits: any = ['spades', 'hearts', 'clubs', 'diamonds'];
+    const newDeck: ICard[] = [];
+    const suits: Suit[] = [
+        Suit.spades,
+        Suit.hearts,
+        Suit.clubs,
+        Suit.diamonds
+    ];
 
-    suits.forEach((suit: any) => {
+    suits.forEach((suit: Suit) => {
         for (let i=0; i<13; i++) {
-            const newCard = {
+            const newCard: ICard = {
                 suit,
                 value: convertToFaceCard(i)
             };
@@ -28,10 +35,10 @@ export default () => {
         }
     });
 
-    const shuffledDeck: any = [];
-    const shuffle = (deck: any) => {
-        const randomCard = Math.floor(Math.random() * deck.length);
-        const card = deck.splice(randomCard, 1)[0];
+    const shuffledDeck: ICard[] = [];
+    const shuffle = (deck: ICard[]): void => {
+        const randomCard: number = Math.floor(Math.random() * deck.length);
+        const card: ICard = deck.splice(randomCard, 1)[0];
         shuffledDeck.push(card);
         if(deck.length > 0) shuffle(deck);
     };
