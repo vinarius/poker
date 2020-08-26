@@ -22,6 +22,10 @@ export const StateProvider = (props) => {
         dispatch({ type: stateActions.SHUFFLE_DECK });
     };
 
+    const drawCard = () => {
+        dispatch({ type: stateActions.DRAW_CARD });
+    };
+
     const {
         tableSize,
         deck
@@ -31,7 +35,8 @@ export const StateProvider = (props) => {
         tableSize,
         deck,
         setTableSize,
-        shuffleDeck
+        shuffleDeck,
+        drawCard
     };
 
     return (

@@ -205,3 +205,19 @@ export function getImage(cardValue: string): string {
             throw new Error('unknown card type, cannot get image');
     }
 }
+
+export function formatCashString(amount: number): string {
+    let cashValueSplit: string[] = amount.toString().split('');
+    const stringConstructorArr: string[] = [];
+
+    for(let i = cashValueSplit.length - 1; i >= 0; i--) {
+        if(stringConstructorArr.length % 3 === 0 && stringConstructorArr.length !== 0) stringConstructorArr.unshift(',');
+        stringConstructorArr.unshift(cashValueSplit[i]);
+    }
+
+    stringConstructorArr.unshift('$');
+
+    const result = stringConstructorArr.join('');
+
+    return result;
+}

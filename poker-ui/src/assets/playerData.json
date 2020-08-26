@@ -1,0 +1,36 @@
+{
+    "Items": [
+        null,
+        {
+            "name": "Phil",
+            "cash": 10000,
+            "cardOne": null,
+            "cardTwo": null
+        },
+        {
+            "name": "Cole",
+            "cash": 10000,
+            "cardOne": null,
+            "cardTwo": null
+        },
+        {
+            "name": "Crystal",
+            "cash": 10000,
+            "cardOne": null,
+            "cardTwo": null
+        },
+        null,
+        {
+            "name": "Lauren",
+            "cash": 10000,
+            "cardOne": null,
+            "cardTwo": null
+        },
+        {
+            "name": "Mark",
+            "cash": 10000,
+            "cardOne": null,
+            "cardTwo": null
+        }
+    ]
+}
