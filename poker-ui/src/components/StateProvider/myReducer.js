@@ -7,6 +7,8 @@ export default (state, action) => {
             return setTableSize(state, action.newTableSize);
         case stateActions.SHUFFLE_DECK:
             return shuffleDeck(state);
+        case stateActions.DRAW_CARD:
+            return drawCard;
         default:
             return state;
     }
@@ -20,4 +22,9 @@ const setTableSize = (state, newTableSize) => ({
 const shuffleDeck = (state) => ({
     ...state,
     deck: ShuffleDeck()
+});
+
+const drawCard = (state) => ({
+    ...state,
+    deck: state.deck.shift()
 });
