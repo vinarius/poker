@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import './small.css';
+import './table.css';
 import { MyContext } from '../StateProvider/stateProvider';
 import {convertToCardImageString, getImage, formatCashString} from '../../services/getImage';
 
@@ -10,10 +10,10 @@ interface player {
     cardTWo: null|string;
 }
 
-export const SmallTable = () => {
+export const Table = () => {
     const cardHeight: string = '60';
 
-    const { deck, shuffleDeck, drawCard } = useContext(MyContext);
+    const { deck, shuffleDeck } = useContext(MyContext);
     console.log('deck:', deck);
 
     const playerData: player[] = require('../../assets/playerData.json').Items;

@@ -2,21 +2,17 @@ import React, { createContext, useReducer } from 'react';
 import myReducer from './myReducer';
 import stateActions from './stateActions';
 import ShuffleDeck from '../../services/shuffleDeck';
+import { IState } from '../../interfaces/state';
 
 export const MyContext = createContext();
 
 export const StateProvider = (props) => {
 
-    const defaultState = {
-        tableSize: 'small',
+    const defaultState: IState = {
         deck: ShuffleDeck()
     };
 
     const [state, dispatch] = useReducer(myReducer, defaultState);
-
-    const setTableSize = (newTableSize) => {
-        dispatch({ type: stateActions.SET_TABLE_SIZE, newTableSize });
-    };
 
     const shuffleDeck = () => {
         dispatch({ type: stateActions.SHUFFLE_DECK });
@@ -34,7 +30,6 @@ export const StateProvider = (props) => {
     const providerValue = {
         tableSize,
         deck,
-        setTableSize,
         shuffleDeck,
         drawCard
     };
