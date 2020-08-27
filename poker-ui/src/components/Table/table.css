@@ -26,6 +26,16 @@
     align-items: center;
 }
 
+.empty-seat {
+    border: 2px outset #eee;
+    border-radius: 5px;
+    height: 2px;
+    width: 2px;
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+}
+
 .flex-row {
     width: 100%;
     height: var(--row-height);
@@ -82,7 +92,7 @@ main {
     margin: 0px 0.25rem;
 }
 
-.small-table {
+.table {
     height: 100vh;
     width: 100vw;
     background: rgb(56,145,0);

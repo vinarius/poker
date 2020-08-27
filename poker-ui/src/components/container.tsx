@@ -7,7 +7,6 @@ import { MainMenu } from './MainMenu/mainMenu';
 export const Container: FunctionComponent = () => {
 
     const { inGame } = useContext(MyContext);
-    console.log('inGame:', inGame);
 
     return (
         <div className='App'>

@@ -9,7 +9,131 @@
 }
 
 .App {
-    height: 100%;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(0deg, rgba(56,145,0,1) 12%, rgba(40,193,9,1) 59%, rgba(0,77,28,1) 92%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+:root {
+    min-width: 320px;
+    min-height: 500px;
+    --row-height: 20vh;
+}
+
+.card-container {
+    margin-top: 0.1rem;
+}
+
+.card-image {
+    margin-top: 0.25rem;
+}
+
+.center-text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.display-flex {
+    display: flex;
     width: 100%;
-    background-color: blue
+    justify-content: space-around;
+    align-items: center;
+}
+
+.flex-row {
+    width: 100%;
+    height: var(--row-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-row-center {
+    width: 100%;
+    height: calc(var(--row-height) * 2);
+    display: flex;
+    justify-content: space-between;
+}
+
+.padding-seven-half-top-px {
+    padding-top: 7.5px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+.margin-quarter {
+    margin: 0.25rem;
+}
+
+.menu-button {
+    border-radius: 5px;
+}
+
+.player-cards {
+    margin: 0.5rem;
+}
+
+.player-info-container {
+    height: calc((100vh - (var(--row-height) * 4)) - 3px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-top: 1px solid #000;
+}
+
+.player-info-text {
+    margin: 0.25rem;
+}
+
+.playing-card {
+    max-height: 100%;
+}
+
+.river-card {
+    margin: 0px 0.25rem;
+}
+
+.table-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.table-seat {
+    height: 100%;
+    width: 35%;
+    margin: 0px 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.table-side-seat {
+    height: calc(50% - 10px); 
+    width: calc(100% - 10px);
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.table-side-column {
+    height: 100%;
+    width: 32.5%;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
 }
