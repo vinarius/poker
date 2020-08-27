@@ -9,7 +9,7 @@ export const MyContext = createContext();
 export const StateProvider = (props: any) => {
 
     const defaultState: IState = {
-        inGame: true,
+        inGame: false,
         deck: ShuffleDeck()
     };
 
