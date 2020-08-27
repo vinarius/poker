@@ -29,7 +29,6 @@
 .flex-row {
     width: 100%;
     height: var(--row-height);
-    /* border-bottom: 1px solid #000; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,7 +39,6 @@
     height: calc(var(--row-height) * 2);
     display: flex;
     justify-content: space-between;
-    /* border-bottom: 1px solid #000; */
 }
 
 .padding-seven-half-top-px {
@@ -101,7 +99,6 @@ main {
 .table-seat {
     height: 100%;
     width: 35%;
-    /* border: 1px solid #000; */
     margin: 0px 1rem;
     display: flex;
     flex-direction: column;
@@ -112,7 +109,6 @@ main {
 .table-side-seat {
     height: calc(50% - 10px); 
     width: calc(100% - 10px);
-    /* border: 1px solid #000; */
     margin: 0.5rem;
     display: flex;
     flex-direction: column;
