@@ -13,7 +13,7 @@ interface player {
 export const Table = () => {
     const cardHeight: string = '60';
 
-    const { deck, shuffleDeck } = useContext(MyContext);
+    const { deck, shuffleDeck, exitGame } = useContext(MyContext);
     console.log('deck:', deck);
 
     const playerData: player[] = require('../../assets/playerData.json').Items;
@@ -197,6 +197,7 @@ export const Table = () => {
                         </div>
                         <button className='margin-quarter menu-button'>Chat</button>
                         <button className='margin-quarter menu-button'>Menu</button>
+                        <button className='margin-quarter menu-button' onClick={()=>{exitGame()}}>Exit</button>
                     </div>
                 </div>
             </main>
