@@ -6,32 +6,45 @@ import { IState } from '../../interfaces/state';
 
 export const MyContext = createContext();
 
-export const StateProvider = (props) => {
+export const StateProvider = (props: any) => {
 
     const defaultState: IState = {
+        inGame: false,
         deck: ShuffleDeck()
     };
 
     const [state, dispatch] = useReducer(myReducer, defaultState);
 
-    const shuffleDeck = () => {
+    const shuffleDeck: ()=> void = () => {
         dispatch({ type: stateActions.SHUFFLE_DECK });
     };
 
-    const drawCard = () => {
+    const drawCard: ()=> void = () => {
         dispatch({ type: stateActions.DRAW_CARD });
     };
 
+    const enterGame: ()=> void = () => {
+        dispatch({ type: stateActions.ENTER_GAME });
+    };
+
+    const exitGame: ()=> void = () => {
+        dispatch({ type: stateActions.EXIT_GAME });
+    };
+
     const {
+        inGame,
         tableSize,
         deck
     } = state;
 
     const providerValue = {
+        inGame,
         tableSize,
         deck,
         shuffleDeck,
-        drawCard
+        drawCard,
+        enterGame,
+        exitGame
     };
 
     return (

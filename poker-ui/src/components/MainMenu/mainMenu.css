@@ -1,0 +1,8 @@
+.main-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.margin-bot-5 {
+    margin-bottom: 5rem;
+}

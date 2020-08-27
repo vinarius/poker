@@ -1,5 +1,7 @@
 import { ICard } from './card';
 
 export interface IState {
-    deck: ICard[]
+    inGame: Boolean;
+    deck: ICard[];
+    // river: ICard[]
 }

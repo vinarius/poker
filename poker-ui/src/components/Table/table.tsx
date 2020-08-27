@@ -13,13 +13,12 @@ interface player {
 export const Table = () => {
     const cardHeight: string = '60';
 
-    const { deck, shuffleDeck } = useContext(MyContext);
-    console.log('deck:', deck);
+    const { deck, shuffleDeck, exitGame } = useContext(MyContext);
 
     const playerData: player[] = require('../../assets/playerData.json').Items;
 
     return (
-        <div className='small-table'>
+        <div className='table'>
             <main>
                 <div className='flex-row'>
                         {(() => {
@@ -40,7 +39,9 @@ export const Table = () => {
                                 )
                             } else {
                                 return (
-                                    <div className='table-seat'></div>
+                                    <div className='table-seat'>
+                                        <div className='empty-seat'></div>
+                                    </div>
                                 )
                             }
                     })()}
@@ -62,7 +63,9 @@ export const Table = () => {
                                 )
                             } else {
                                 return (
-                                    <div className='table-seat'></div>
+                                    <div className='table-seat'>
+                                        <div className='empty-seat'></div>
+                                    </div>
                                 )
                             }
                     })()}
@@ -87,7 +90,9 @@ export const Table = () => {
                                 )
                             } else {
                                 return (
-                                    <div className='table-side-seat'></div>
+                                    <div className='table-side-seat'>
+                                        <div className='empty-seat'></div>
+                                    </div>
                                 )
                             }
                     })()}
@@ -109,7 +114,9 @@ export const Table = () => {
                             )
                         } else {
                             return (
-                                <div className='table-side-seat'></div>
+                                <div className='table-side-seat'>
+                                        <div className='empty-seat'></div>
+                                    </div>
                             )
                         }
                     })()}
@@ -141,7 +148,9 @@ export const Table = () => {
                                 )
                             } else {
                                 return (
-                                    <div className='table-side-seat'></div>
+                                    <div className='table-side-seat'>
+                                        <div className='empty-seat'></div>
+                                    </div>
                                 )
                             }
                     })()}
@@ -163,7 +172,9 @@ export const Table = () => {
                             )
                         } else {
                             return (
-                                <div className='table-side-seat'></div>
+                                <div className='table-side-seat'>
+                                    <div className='empty-seat'></div>
+                                </div>
                             )
                         }
                     })()}
@@ -185,18 +196,18 @@ export const Table = () => {
                             <img alt='playing card' src={getImage(convertToCardImageString(deck[13]))} className='playing-card' height={cardHeight} />
                         </div>
                         <div className='padding-seven-half-top-px'>
-                            <button>Check</button>
-                            <button>Bet</button>
-                            <button>Fold</button>
+                            <button onClick={()=>{console.log('Check feature under construction :)')}}>Check</button>
+                            <button onClick={()=>{console.log('Bet feature under construction :)')}}>Bet</button>
+                            <button onClick={()=>{console.log('Fold feature under construction :)')}}>Fold</button>
                         </div>
                     </div>
                     <div className='display-flex'>
                         <div className='user-info'>
                             <p>Mark:</p>
-                            <p>$5,277.00</p>
+                            <p>$15,277.00</p>
                         </div>
-                        <button className='margin-quarter menu-button'>Chat</button>
-                        <button className='margin-quarter menu-button'>Menu</button>
+                        <button className='margin-quarter menu-button' onClick={()=>{console.log('Chat feature under construction :)')}}>Chat</button>
+                        <button className='margin-quarter menu-button' onClick={()=>{exitGame()}}>Menu</button>
                     </div>
                 </div>
             </main>

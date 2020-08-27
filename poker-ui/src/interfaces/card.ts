@@ -1,6 +1,7 @@
 export interface ICard {
     suit: Suit,
-    value: NumericValue | FaceCardValue
+    value: NumericValue | FaceCardValue,
+    isVisible: Boolean
 }
 
 export enum Suit {
