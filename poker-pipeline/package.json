@@ -25,6 +25,7 @@
   "dependencies": {
     "@aws-cdk/aws-codepipeline": "^1.61.1",
     "@aws-cdk/aws-codepipeline-actions": "^1.61.1",
+    "@aws-cdk/aws-secretsmanager": "^1.61.1",
     "@aws-cdk/core": "1.61.1",
     "source-map-support": "^0.5.16"
   }

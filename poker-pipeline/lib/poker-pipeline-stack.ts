@@ -1,6 +1,7 @@
 import * as cdk from '@aws-cdk/core';
 import * as CodePipeline from '@aws-cdk/aws-codepipeline';
-import * as CodePipeLineActions from '@aws-cdk/aws-codepipeline-actions'
+import * as CodePipeLineActions from '@aws-cdk/aws-codepipeline-actions';
+import * as SecretsManager from '@aws-cdk/aws-secretsmanager';
 
 export class PokerPipelineStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
@@ -18,7 +19,7 @@ export class PokerPipelineStack extends cdk.Stack {
               branch: 'master',
               owner: 'vinarius',
               actionName: 'source',
-              oauthToken: 'somevalue',
+              oauthToken: 'somevalue', // follow up on this
               output: sourceOutput
             })
           ]
