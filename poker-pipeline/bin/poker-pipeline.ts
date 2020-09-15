@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+import { config } from 'dotenv';
+config();
+
 import 'source-map-support/register';
 import * as cdk from '@aws-cdk/core';
 import { PokerPipelineStack } from '../lib/poker-pipeline-stack';
