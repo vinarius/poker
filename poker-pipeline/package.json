@@ -1,0 +1,35 @@
+{
+  "name": "poker-pipeline",
+  "version": "0.1.0",
+  "bin": {
+    "poker-pipeline": "bin/poker-pipeline.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk",
+    "cdk-synth": "sh deploy/synth.sh",
+    "cdk-deploy": "sh deploy/deploy.sh"
+  },
+  "devDependencies": {
+    "@aws-cdk/assert": "1.61.1",
+    "@types/jest": "^26.0.13",
+    "@types/node": "10.17.27",
+    "aws-cdk": "~1.61.1",
+    "jest": "^26.4.2",
+    "ts-jest": "^26.2.0",
+    "ts-node": "^8.1.0",
+    "typescript": "~3.9.7"
+  },
+  "dependencies": {
+    "@aws-cdk/aws-codebuild": "^1.63.0",
+    "@aws-cdk/aws-codedeploy": "^1.63.0",
+    "@aws-cdk/aws-codepipeline": "^1.63.0",
+    "@aws-cdk/aws-codepipeline-actions": "^1.63.0",
+    "@aws-cdk/aws-s3": "^1.63.0",
+    "@aws-cdk/core": "^1.63.0",
+    "dotenv": "^8.2.0",
+    "source-map-support": "^0.5.16"
+  }
+}
