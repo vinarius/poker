@@ -8,11 +8,15 @@ export class PokerPipelineStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    const githubToken: string|undefined = process.env['GITHUBTOKEN'];
-    const myOauthToken: cdk.SecretValue = cdk.SecretValue.secretsManager(githubToken as string);
+    if(process.env['GITHUBTOKEN'] === undefined) {
+      console.log('Environment variable "GITHUBTOKEN" is not set and will cause an error fetching source.');
+    }
+
+    const githubToken: string = process.env['GITHUBTOKEN'] ?? '';
 
     const pokerBucket: S3.Bucket = new S3.Bucket(this, 'poker-bucket', {
-      websiteIndexDocument: 'index.html'
+      websiteIndexDocument: 'index.html',
+      publicReadAccess: true
     });
 
     const uiBuild: CodeBuild.PipelineProject = new CodeBuild.PipelineProject(this, 'uiBuild', {
@@ -21,7 +25,6 @@ export class PokerPipelineStack extends cdk.Stack {
         phases: {
           install: {
             commands: [
-              'cd ../..',
               'cd poker-ui',
               'npm i'
             ]
@@ -30,17 +33,17 @@ export class PokerPipelineStack extends cdk.Stack {
             commands: [
               'npm run build'
             ]
-          },
-          artifacts: {
-            'base-directory': '../../poker-ui/build',
-            files: [
-              'static/**/*',
-              'index.html'
-            ],
           }
         },
+        artifacts: {
+          'base-directory': 'poker-ui/build',
+          files: [
+            'static/**/*',
+            'index.html'
+          ],
+        },
         cache: {
-          'base-directory': '../../poker-ui',
+          'base-directory': 'poker-ui',
           paths: [
             'node_modules/**/*'
           ]
@@ -64,8 +67,8 @@ export class PokerPipelineStack extends cdk.Stack {
               branch: 'master',
               owner: 'vinarius',
               actionName: 'source',
-              oauthToken: myOauthToken,
-              output: sourceOutput
+              oauthToken: cdk.SecretValue.plainText(githubToken),
+              output: sourceOutput,
             })
           ]
         },
@@ -74,8 +77,8 @@ export class PokerPipelineStack extends cdk.Stack {
           actions: [
             new CodePipeLineActions.CodeBuildAction({
               actionName: 'ui_build',
-              input: sourceOutput,
               project: uiBuild,
+              input: sourceOutput,
               outputs: [uiBuildOutput]
             })
           ]
