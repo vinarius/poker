@@ -125,8 +125,8 @@ export const Table = () => {
                         <div className='center-text-container'>
                             <p>Pot</p>
                             <p>$45,234.00</p>
-                            <br></br>
-                            <button onClick={()=>{shuffleDeck()}}>Shuffle Deck</button>
+                            {/* <br></br>
+                            <button onClick={()=>{shuffleDeck()}}>Shuffle Deck</button> */}
                         </div>
                     </div>
                     <div className='table-side-column'>
@@ -196,9 +196,13 @@ export const Table = () => {
                             <img alt='playing card' src={getImage(convertToCardImageString(deck[13]))} className='playing-card' height={cardHeight} />
                         </div>
                         <div className='padding-seven-half-top-px'>
-                            <button onClick={()=>{console.log('Check feature under construction :)')}}>Check</button>
-                            <button onClick={()=>{console.log('Bet feature under construction :)')}}>Bet</button>
-                            <button onClick={()=>{console.log('Fold feature under construction :)')}}>Fold</button>
+                            <div className="container-center-items">
+                                <button className='player-game-action-button' onClick={()=>{console.log('Check feature under construction :)')}}>Check</button>
+                            </div>
+                            <div className="container-center-items">
+                                <button className='player-game-action-button' onClick={()=>{console.log('Bet feature under construction :)')}}>Bet</button>
+                                <button className='player-game-action-button' onClick={()=>{console.log('Fold feature under construction :)')}}>Fold</button>
+                            </div>
                         </div>
                     </div>
                     <div className='display-flex'>
@@ -206,8 +210,10 @@ export const Table = () => {
                             <p>Mark:</p>
                             <p>$15,277.00</p>
                         </div>
-                        <button className='margin-quarter menu-button' onClick={()=>{console.log('Chat feature under construction :)')}}>Chat</button>
-                        <button className='margin-quarter menu-button' onClick={()=>{exitGame()}}>Menu</button>
+                        <div>
+                            <button className='margin-quarter player-game-menu-button' onClick={()=>{console.log('Chat feature under construction :)')}}>Chat</button>
+                            <button className='margin-quarter player-game-menu-button' onClick={()=>{exitGame()}}>Menu</button>
+                        </div>
                     </div>
                 </div>
             </main>
