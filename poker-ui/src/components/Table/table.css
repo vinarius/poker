@@ -1,6 +1,6 @@
 :root {
     min-width: 320px;
-    min-height: 500px;
+    min-height: 578px;
     --row-height: 20vh;
 }
 
@@ -17,6 +17,17 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.chat-card {
+    margin-top: 1rem;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-input-text {
+    justify-self: flex-end;
 }
 
 .container-center-items {
@@ -169,4 +180,14 @@ main {
 .user-info {
     display: flex;
     flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+    .main-menu-toast {
+        width: 85vw;
+    }
+
+    .player-game-sidebar-chat {
+        width: 85vw;
+    }
 }

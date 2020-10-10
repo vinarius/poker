@@ -2,7 +2,7 @@ import { IState } from './../../interfaces/state';
 import stateActions from './stateActions';
 import ShuffleDeck from '../../services/shuffleDeck';
 
-export default (state: IState, action) => {
+export default (state: IState, action: any) => {
     switch(action.type) {
         case stateActions.SHUFFLE_DECK:
             return shuffleDeck(state);
@@ -12,6 +12,10 @@ export default (state: IState, action) => {
             return enterGame(state);
         case stateActions.EXIT_GAME:
             return exitGame(state);
+        case stateActions.UPDATE_CHAT_INPUT:
+            return updateChatInput(state, action.payload);
+        case stateActions.UPDATE_CHAT_HISTORY:
+            return updateChatHistory(state, action.payload);
         default:
             return state;
     }
@@ -35,4 +39,14 @@ const enterGame = (state: IState) => ({
 const exitGame = (state: IState) => ({
     ...state,
     inGame: false
+});
+
+const updateChatInput = (state: IState, newChatText: string) => ({
+    ...state,
+    chatInput: newChatText
+});
+
+const updateChatHistory = (state: IState, newChatHistory: string[]) => ({
+    ...state,
+    chatHistory: newChatHistory
 });

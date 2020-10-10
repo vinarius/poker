@@ -4,13 +4,15 @@ import stateActions from './stateActions';
 import ShuffleDeck from '../../services/shuffleDeck';
 import { IState } from '../../interfaces/state';
 
-export const MyContext = createContext();
+export const MyContext = createContext({});
 
 export const StateProvider = (props: any) => {
 
     const defaultState: IState = {
-        inGame: false,
-        deck: ShuffleDeck()
+        inGame: true,
+        deck: ShuffleDeck(),
+        chatInput: '',
+        chatHistory: []
     };
 
     const [state, dispatch] = useReducer(myReducer, defaultState);
@@ -31,20 +33,34 @@ export const StateProvider = (props: any) => {
         dispatch({ type: stateActions.EXIT_GAME });
     };
 
+    const updateChatInput: ()=> void = (newChatText: string) => {
+        dispatch({ type: stateActions.UPDATE_CHAT_INPUT, payload: newChatText });
+    };
+
+    const updateChatHistory: ()=> void = (newChatHistory: string[]) => {
+        dispatch({ type: stateActions.UPDATE_CHAT_HISTORY, payload: newChatHistory});
+    };
+
     const {
         inGame,
         tableSize,
-        deck
+        deck,
+        chatInput,
+        chatHistory
     } = state;
 
     const providerValue = {
         inGame,
         tableSize,
         deck,
+        chatInput,
+        chatHistory,
         shuffleDeck,
         drawCard,
         enterGame,
-        exitGame
+        exitGame,
+        updateChatInput,
+        updateChatHistory
     };
 
     return (

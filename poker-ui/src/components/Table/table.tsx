@@ -1,25 +1,45 @@
-import React, { useContext } from 'react';
+import React, { FunctionComponent, useContext, useState, useRef, MutableRefObject } from 'react';
 import './table.css';
 import { MyContext } from '../StateProvider/stateProvider';
 import {convertToCardImageString, getImage, formatCashString} from '../../services/getImage';
+import { player } from '../../interfaces/player';
+import { Sidebar } from 'primereact/sidebar';
+import { Button } from 'primereact/button';
+import { Toast, ToastMessage } from 'primereact/toast';
+import { Card } from 'primereact/card';
+import { InputText } from 'primereact/inputtext';
 
-interface player {
-    name: string;
-    cash: number;
-    cardOne: null|string;
-    cardTWo: null|string;
-}
 
-export const Table = () => {
+export const Table: FunctionComponent = () => {
     const cardHeight: string = '60';
 
-    const { deck, shuffleDeck, exitGame } = useContext(MyContext);
+    const {
+        deck,
+        shuffleDeck,
+        exitGame,
+        chatInput,
+        updateChatInput
+     } = useContext<any>(MyContext);
+    const [isShowingChat, setIsShowingChat] = useState<boolean>(false);
+    const myToast = useRef() as MutableRefObject<Toast>;
+    const showToast: Function = (
+        severityValue: ToastMessage['severity'],
+        summaryValue: ToastMessage['summary'],
+        detailValue: ToastMessage['detail']
+        ): void => {
+        myToast.current.show({
+            severity: severityValue,
+            summary: summaryValue,
+            detail: detailValue
+        });
+    }
 
     const playerData: player[] = require('../../assets/playerData.json').Items;
 
     return (
         <div className='table'>
             <main>
+                <Toast className='main-menu-toast' ref={myToast} />
                 <div className='flex-row'>
                         {(() => {
                             if(playerData[0]) {
@@ -197,11 +217,11 @@ export const Table = () => {
                         </div>
                         <div className='padding-seven-half-top-px'>
                             <div className="container-center-items">
-                                <button className='player-game-action-button' onClick={()=>{console.log('Check feature under construction :)')}}>Check</button>
+                                <Button className='player-game-action-button' onClick={()=>{ showToast('info', 'info message', 'Check feature under construction :)') }}>Check</Button>
                             </div>
                             <div className="container-center-items">
-                                <button className='player-game-action-button' onClick={()=>{console.log('Bet feature under construction :)')}}>Bet</button>
-                                <button className='player-game-action-button' onClick={()=>{console.log('Fold feature under construction :)')}}>Fold</button>
+                                <Button className='player-game-action-button' onClick={()=>{ showToast('info', 'info message', 'Bet feature under construction :)') }}>Bet</Button>
+                                <Button className='player-game-action-button' onClick={()=>{ showToast('info', 'info message', 'Fold feature under construction :)') }}>Fold</Button>
                             </div>
                         </div>
                     </div>
@@ -211,8 +231,14 @@ export const Table = () => {
                             <p>$15,277.00</p>
                         </div>
                         <div>
-                            <button className='margin-quarter player-game-menu-button' onClick={()=>{console.log('Chat feature under construction :)')}}>Chat</button>
-                            <button className='margin-quarter player-game-menu-button' onClick={()=>{exitGame()}}>Menu</button>
+                            <Sidebar className='player-game-sidebar-chat' visible={isShowingChat} position="right" onHide={() => setIsShowingChat(false)}>
+                                <Card className='chat-card' title='Chat'>
+                                    <InputText className='chat-input-text' value={chatInput} onChange={(event) => { updateChatInput(event.target.value) }} />
+                                </Card>
+                            </Sidebar>
+                            
+                            <Button onClick={(e) => setIsShowingChat(true)} className='player-game-action-button'>Chat</Button>
+                            <Button onClick={()=>{exitGame()}} className='player-game-action-button'>Menu</Button>
                         </div>
                     </div>
                 </div>
