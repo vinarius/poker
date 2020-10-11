@@ -46,7 +46,7 @@ const updateChatInput = (state: IState, newChatText: string) => ({
     chatInput: newChatText
 });
 
-const updateChatHistory = (state: IState, newChatHistory: string[]) => ({
+const updateChatHistory = (state: IState, newChatMessage: string[]) => ({
     ...state,
-    chatHistory: newChatHistory
+    chatHistory: [...state.chatHistory, newChatMessage]
 });

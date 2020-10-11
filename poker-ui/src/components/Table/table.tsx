@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useState, useRef, MutableRefObject } from 'react';
+import React, { FunctionComponent, useContext, useState, useRef, MutableRefObject, FormEvent } from 'react';
 import './table.css';
 import { MyContext } from '../StateProvider/stateProvider';
 import {convertToCardImageString, getImage, formatCashString} from '../../services/getImage';
@@ -8,6 +8,8 @@ import { Button } from 'primereact/button';
 import { Toast, ToastMessage } from 'primereact/toast';
 import { Card } from 'primereact/card';
 import { InputText } from 'primereact/inputtext';
+import { IState } from '../../interfaces/state';
+import convertChatMessageIntoMultiline from '../../services/convertChatMessageIntoMultiline';
 
 
 export const Table: FunctionComponent = () => {
@@ -18,7 +20,9 @@ export const Table: FunctionComponent = () => {
         shuffleDeck,
         exitGame,
         chatInput,
-        updateChatInput
+        updateChatInput,
+        chatHistory,
+        updateChatHistory
      } = useContext<any>(MyContext);
     const [isShowingChat, setIsShowingChat] = useState<boolean>(false);
     const myToast = useRef() as MutableRefObject<Toast>;
@@ -34,7 +38,18 @@ export const Table: FunctionComponent = () => {
         });
     }
 
+    const handleChatSubmit = (event: FormEvent<HTMLFormElement>): void => {
+        event.preventDefault();
+        updateChatHistory(chatInput);
+        updateChatInput('');
+    };
+
     const playerData: player[] = require('../../assets/playerData.json').Items;
+
+    const chatBoxHistory: HTMLParagraphElement[] = chatHistory.map((el:IState['chatHistory'], index:number) => {
+        // el.length > 26 ? convertChatMessageIntoMultiline(el, index)
+        // : <p key={index} className='chat-message'>{el}</p>
+    });
 
     return (
         <div className='table'>
@@ -233,7 +248,12 @@ export const Table: FunctionComponent = () => {
                         <div>
                             <Sidebar className='player-game-sidebar-chat' visible={isShowingChat} position="right" onHide={() => setIsShowingChat(false)}>
                                 <Card className='chat-card' title='Chat'>
-                                    <InputText className='chat-input-text' value={chatInput} onChange={(event) => { updateChatInput(event.target.value) }} />
+                                    <div className='chat-box'>
+                                        {chatBoxHistory}
+                                    </div>
+                                    <form onSubmit={(event)=>{ handleChatSubmit(event) }}>
+                                        <InputText className='chat-input-text' value={chatInput} onChange={(event) => { updateChatInput(event.target.value) }} />
+                                    </form>
                                 </Card>
                             </Sidebar>
                             
