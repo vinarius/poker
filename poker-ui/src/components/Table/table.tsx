@@ -49,6 +49,7 @@ export const Table: FunctionComponent = () => {
     const chatBoxHistory: HTMLParagraphElement[] = chatHistory.map((el:IState['chatHistory'], index:number) => {
         // el.length > 26 ? convertChatMessageIntoMultiline(el, index)
         // : <p key={index} className='chat-message'>{el}</p>
+        return <p key={index} className='chat-message'>{el}</p>
     });
 
     return (
