@@ -10,7 +10,39 @@ import { Card } from 'primereact/card';
 import { InputText } from 'primereact/inputtext';
 import { IState } from '../../interfaces/state';
 import convertChatMessageIntoMultiline from '../../services/convertChatMessageIntoMultiline';
+import { join } from 'path';
 
+function sliceChatString(string: string, splitStrings: string[] = []): string[] {
+    if(string.length < 25) {
+        splitStrings.push(string);
+        return splitStrings;
+    }
+
+    splitStrings.push(string.slice(0, 23).concat('-'));
+    const remainder:string = string.slice(23, string.length);
+    sliceChatString(remainder, splitStrings);
+
+    return splitStrings;
+}
+
+function reconstructChatLines(chatLines: string[], joinedMessages: string[] = [], placeholderTest?: string): string[] {
+    const line1: string = placeholderTest ?? chatLines.shift() ?? '';
+    const line2: string = chatLines.shift() ?? '';
+    const lengthTest: string = `${line1} ${line2}`;
+  
+    if(lengthTest.length < 24 && chatLines.length > 0) {
+      reconstructChatLines(chatLines, joinedMessages, lengthTest);
+    } else if(chatLines.length > 1) {
+      joinedMessages.push(line1);
+      chatLines.unshift(line2);
+      reconstructChatLines(chatLines, joinedMessages);
+    } else if(chatLines.length === 0) {
+      joinedMessages.push(line1);
+      joinedMessages.push(line2);
+    }
+  
+    return joinedMessages;
+  }
 
 export const Table: FunctionComponent = () => {
     const cardHeight: string = '60';
@@ -44,12 +76,37 @@ export const Table: FunctionComponent = () => {
         updateChatInput('');
     };
 
-    const playerData: player[] = require('../../assets/playerData.json').Items;
+    const convertChatMessageIntoMultiline: Function = (chatMessage: string): JSX.Element => {
 
-    const chatBoxHistory: HTMLParagraphElement[] = chatHistory.map((el:IState['chatHistory'], index:number) => {
-        // el.length > 26 ? convertChatMessageIntoMultiline(el, index)
-        // : <p key={index} className='chat-message'>{el}</p>
-        return <p key={index} className='chat-message'>{el}</p>
+        const splitBySpaces: string[] = chatMessage.split(' ');
+        let multilineChatMessage: string[] = [];
+        
+        splitBySpaces.forEach((line: string) => {
+            if(line.length > 24) {
+                const slicedLongLine: string[] = sliceChatString(line);
+                slicedLongLine.forEach((slicedLine: string) => multilineChatMessage.push(slicedLine));
+            } else {
+                multilineChatMessage.push(line);
+            }
+        });
+
+        // Condense elements into a single line with < 24 characters. Otherwise, it creates new lines for each space.
+        const condensedChatMessage: string[] = reconstructChatLines(multilineChatMessage);
+    
+        return <div>
+            {condensedChatMessage.map((message: string, index: number) => {
+                return <p key={index} className='chat-message'>{message}</p>
+            })}
+        </div>;
+    };
+
+    const playerData: player[] = require('../../assets/playerData.json').Items;
+    
+    const chatBoxHistory: HTMLParagraphElement[] = chatHistory.map((el:string, index:number) => {
+        if(index > 100) return;
+        return el.length > 24
+        ? convertChatMessageIntoMultiline(el, index)
+        : <p key={index} className='chat-message'>{`User: ${el}`}</p>
     });
 
     return (
