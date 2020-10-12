@@ -1,6 +1,6 @@
 :root {
     min-width: 320px;
-    min-height: 500px;
+    min-height: 578px;
     --row-height: 20vh;
 }
 
@@ -18,6 +18,31 @@
     justify-content: center;
     align-items: center;
 }
+
+.chat-box {
+    height: 82vh;
+    width: 100%;
+    margin-bottom: 1rem;
+    overflow-y: auto;
+}
+
+.chat-card {
+    margin-top: 1rem;
+    height: 93vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.chat-input-text {
+    width: 100%;
+}
+
+.chat-message {
+    margin-bottom: 0.5rem;
+}
+
+.chat-message-multiline {}
 
 .container-center-items {
     display: flex;
@@ -169,4 +194,20 @@ main {
 .user-info {
     display: flex;
     flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+    .main-menu-toast {
+        width: 85vw;
+    }
+
+    .player-game-sidebar-chat {
+        width: 85vw;
+    }
+
+    .chat-box {
+        height: 65vh;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
 }
