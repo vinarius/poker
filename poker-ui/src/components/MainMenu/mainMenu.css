@@ -27,3 +27,9 @@
     font-size: 1.5rem;
     margin-bottom: 3rem;
 }
+
+@media screen and (max-width: 768px) {
+    .main-menu-toast {
+        width: 85vw;
+    }
+}

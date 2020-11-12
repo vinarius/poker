@@ -1,18 +1,34 @@
-import React, { FunctionComponent, useContext } from 'react';
+import React, { FunctionComponent, useContext, useRef, MutableRefObject } from 'react';
 import { MyContext } from '../StateProvider/stateProvider';
 import './mainMenu.css';
+import { Button } from 'primereact/button';
+import { Toast, ToastMessage } from 'primereact/toast';
 
 export const MainMenu: FunctionComponent = () => {
 
-    const { enterGame } = useContext(MyContext);
+    const { enterGame } = useContext<any>(MyContext);
+
+    const myToast = useRef() as MutableRefObject<Toast>;
+    const showToast: Function = (
+        severityValue: ToastMessage['severity'],
+        summaryValue: ToastMessage['summary'],
+        detailValue: ToastMessage['detail']
+        ): void => {
+        myToast.current.show({
+            severity: severityValue,
+            summary: summaryValue,
+            detail: detailValue
+        });
+    }
 
     return (
         <div className='main-menu'>
+            <Toast className="main-menu-toast" ref={myToast} />
             <p className='title'>Vin's Poker App</p>
-            <button className="main-menu-button" onClick={()=>{enterGame()}}>Enter Game</button>
-            <button className="main-menu-button" onClick={()=>{console.log('Friends feature under construction :)')}}>Friends</button>
-            <button className="main-menu-button" onClick={()=>{console.log('Leaderboard feature under construction :)')}}>Leaderboard</button>
-            <button className="main-menu-button" onClick={()=>{console.log('Settings feature under construction :)')}}>Settings</button>
+            <Button className="main-menu-button" onClick={()=>{enterGame()}}>Enter Game</Button>
+            <Button className="main-menu-button" onClick={()=>{ showToast('info', 'info message', 'Friends feature under construction :)')} }>Friends</Button>
+            <Button className="main-menu-button" onClick={()=>{ showToast('info', 'info message', 'Leaderboard feature under construction :)')} }>Leaderboard</Button>
+            <Button className="main-menu-button" onClick={()=>{ showToast('info', 'info message', 'Settings feature under construction :)')} }>Settings</Button>
         </div>
     );
 };
