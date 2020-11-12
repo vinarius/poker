@@ -16,7 +16,8 @@ export class PokerPipelineStack extends cdk.Stack {
 
     const pokerBucket: S3.Bucket = new S3.Bucket(this, 'poker-bucket', {
       websiteIndexDocument: 'index.html',
-      publicReadAccess: true
+      publicReadAccess: true,
+      encryption: S3.BucketEncryption.UNENCRYPTED
     });
 
     const uiBuild: CodeBuild.PipelineProject = new CodeBuild.PipelineProject(this, 'uiBuild', {

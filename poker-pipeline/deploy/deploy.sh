@@ -1,2 +1,2 @@
 AWS_PROFILE="personal" \
-cdk deploy
+npx cdk deploy
