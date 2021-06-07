@@ -19,7 +19,7 @@
     align-items: center;
 }
 
-.chat-box {
+#chat-box {
     height: 82vh;
     width: 100%;
     margin-bottom: 1rem;
@@ -205,7 +205,7 @@ main {
         width: 85vw;
     }
 
-    .chat-box {
+    #chat-box {
         height: 65vh;
         width: 100%;
         margin-bottom: 1rem;

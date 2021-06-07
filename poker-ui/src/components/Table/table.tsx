@@ -70,10 +70,16 @@ export const Table: FunctionComponent = () => {
         });
     }
 
+    const updateChatScroll = (): void => {
+        const element = document.getElementById('chat-box');
+        element!.scrollTop = element!.scrollHeight;
+    }
+
     const handleChatSubmit = (event: FormEvent<HTMLFormElement>): void => {
         event.preventDefault();
         updateChatHistory(chatInput);
         updateChatInput('');
+        updateChatScroll();
     };
 
     const convertChatMessageIntoMultiline: Function = (chatMessage: string): JSX.Element => {
@@ -306,7 +312,7 @@ export const Table: FunctionComponent = () => {
                         <div>
                             <Sidebar className='player-game-sidebar-chat' visible={isShowingChat} position="right" onHide={() => setIsShowingChat(false)}>
                                 <Card className='chat-card' title='Chat'>
-                                    <div className='chat-box'>
+                                    <div id='chat-box'>
                                         {chatBoxHistory}
                                     </div>
                                     <form onSubmit={(event)=>{ handleChatSubmit(event) }}>
