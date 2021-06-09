@@ -8,6 +8,8 @@
     "build": "npm run clean && tsc --project tsconfig.build.json && ts-node bin/build-dist.ts",
     "cdk": "cdk",
     "clean": "rm -rf ../dist && rm -rf ./dist",
+    "deploy": "ts-node bin/deployAll",
+    "deploy-client": "ts-node bin/deployClient.ts",
     "test": "jest",
     "watch": "tsc -w"
   },

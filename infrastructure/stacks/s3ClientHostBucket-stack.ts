@@ -15,13 +15,13 @@ export class S3ClientHostBucketStack extends Stack {
       project
     } = props;
 
-    const clientHostBucket = new Bucket(this, `kraus-${project}-clientHostBucket`, {
+    const clientHostBucket = new Bucket(this, `kraus-${project}-clienthostbucket`, {
       // TODO: look up best practices here
       publicReadAccess: true,
       enforceSSL: true,
       // TODO: create npm run build script
       websiteIndexDocument: resolve(__dirname, '..', 'dist', 'client', 'index.html'),
-      bucketName: `kraus-${project}-clientHostBucket`
+      bucketName: `kraus-${project}-clienthostbucket`
     });
   }
 }

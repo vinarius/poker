@@ -1,0 +1,6 @@
+TODO: upload contents of client build to s3 using sdk - can't use cli - sdk is installed via a node module but cli is not guaranteed to be installed on user's machine
+TODO: get npm run deploy working
+TODO: create cloudfront delivery of client
+TODO: enforce ssh connection
+TODO: design and build out dynamo table
+TODO: CRUD lambda in typescript
