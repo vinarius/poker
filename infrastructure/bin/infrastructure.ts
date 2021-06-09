@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import 'source-map-support/register';
 import {App} from '@aws-cdk/core';
-import { S3ClientHostBucketStack } from '../lib/s3ClientHostBucket-stack';
+import { S3ClientHostBucketStack } from '../stacks/s3ClientHostBucket-stack';
 
 import config from '../config';
 const {

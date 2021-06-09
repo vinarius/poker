@@ -5,16 +5,17 @@
     "infrastructure": "bin/infrastructure.js"
   },
   "scripts": {
-    "build": "tsc",
-    "watch": "tsc -w",
+    "build": "npm run clean && tsc --project tsconfig.build.json && ts-node bin/build-dist.ts",
+    "cdk": "cdk",
+    "clean": "rm -rf ../dist && rm -rf ./dist",
     "test": "jest",
-    "cdk": "cdk"
+    "watch": "tsc -w"
   },
   "devDependencies": {
     "@aws-cdk/assert": "1.107.0",
     "@aws-cdk/aws-s3": "1.107.0",
     "@types/jest": "^26.0.10",
-    "@types/node": "^10.17.27",
+    "@types/node": "^10.17.60",
     "aws-cdk": "1.107.0",
     "jest": "^26.4.2",
     "ts-jest": "^26.2.0",
