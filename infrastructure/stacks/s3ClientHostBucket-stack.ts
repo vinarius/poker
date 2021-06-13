@@ -1,27 +1,37 @@
 // import {resolve} from 'path';
 
-import {Construct, StackProps, Stack} from '@aws-cdk/core';
-// import {Bucket} from '@aws-cdk/aws-s3';
+import {
+  Construct,
+  RemovalPolicy,
+  StackProps,
+  Stack
+} from '@aws-cdk/core';
+import {Bucket} from '@aws-cdk/aws-s3';
 
-interface clientHostBucketProps extends StackProps {
+interface ClientHostBucketProps extends StackProps {
   project: string;
 }
 
 export class S3ClientHostBucketStack extends Stack {
-  constructor(scope: Construct, id: string, props: clientHostBucketProps) {
+  constructor(scope: Construct, id: string, props: ClientHostBucketProps) {
     super(scope, id, props);
 
-    // const {
-    //   project
-    // } = props;
+    const {
+      project
+    } = props;
 
-    // const clientHostBucket = new Bucket(this, `kraus-${project}-clienthostbucket`, {
-    //   // TODO: look up best practices here
-    //   publicReadAccess: true,
-    //   enforceSSL: true,
-    //   // TODO: create npm run build script
-    //   websiteIndexDocument: resolve(__dirname, '..', 'dist', 'client', 'index.html'),
-    //   bucketName: `kraus-${project}-clienthostbucket`
-    // });
+    new Bucket(this, `kraus-${project}-clienthostbucket`, {
+      // TODO: look up best practices here
+      autoDeleteObjects: true,
+      removalPolicy: RemovalPolicy.DESTROY,
+      publicReadAccess: true,
+      // TODO: set to true once hooked up to cloudfront
+      enforceSSL: false,
+      // TODO: cdk expects index.html to be available in the bucket - throws an error on stack create
+      // Not sure how to create bucket and put build on stack initialize
+      // websiteIndexDocument: resolve(__dirname, '..', '..', 'dist', 'client', 'index.html'),
+      websiteIndexDocument: 'index.html',
+      bucketName: `kraus-${project}-clienthostbucket`
+    });
   }
 }

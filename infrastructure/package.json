@@ -5,7 +5,7 @@
     "infrastructure": "bin/infrastructure.js"
   },
   "scripts": {
-    "build": "tsc --project tsconfig.build.json && ts-node bin/build-dist.ts",
+    "build": "tsc --project tsconfig.build.json",
     "cdk": "cdk",
     "deploy": "ts-node bin/deployAll",
     "test": "jest"
