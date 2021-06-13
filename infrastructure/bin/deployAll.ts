@@ -7,7 +7,8 @@ const {
 async function deployInfrastructure(): Promise<void> {
   try {
     console.log('Attempting deployment');
-    await exec(`npm run cdk -- deploy --require-approval never --profile ${profile}`);
+    const stackName = process.env.STACK ?? '--all';
+    await exec(`npm run cdk -- deploy ${stackName} --require-approval never --profile ${profile}`);
     console.log('Deployment has completed successfully');
   } catch (error) {
     console.log('an error has occurred during the deployment');
