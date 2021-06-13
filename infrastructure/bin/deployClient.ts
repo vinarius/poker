@@ -1,18 +1,19 @@
-import {
-  S3Client,
-  
-} from '@aws-sdk/client-s3';
+// import {
+//   PutObjectCommand,
+//   PutObjectCommandInput,
+//   PutObjectCommandOutput,
+//   S3Client
+// } from '@aws-sdk/client-s3';
 
-import config from '../config';
+// import config from '../config';
 
-const {
-  profile,
-  region
-} = config;
+// const {
+//   profile,
+//   region
+// } = config;
 
-process.env.AWS_PROFILE = profile;
+// const s3 = new S3Client({});
 
-const s3 = new S3Client({
-  region
-});
-
+// const foo: PutObjectCommandInput = {
+//   Bucket
+// };

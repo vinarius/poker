@@ -4,6 +4,8 @@ const {
   profile
 } = config;
 
+// import {} from './'
+
 async function deploy(): Promise<void> {
   try {
     await exec(`npm run cdk -- deploy --require-approval never --profile ${profile}`);
