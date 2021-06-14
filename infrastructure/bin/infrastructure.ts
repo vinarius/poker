@@ -9,15 +9,14 @@ import {CloudfrontStack} from '../stacks/cloudfront-stack';
 import config from '../config';
 import { Bucket } from '@aws-cdk/aws-s3';
 const {
-  project,
-  profile
+  project
 } = config;
 
-process.env.AWS_PROFILE=profile;
-
 const app = new App();
+
+const clientHostBucketId = `kraus-${project}-clienthostbucket`;
 const s3HostingBucketStack = new S3ClientHostBucketStack(app, 'S3ClientHostBucketStack', {
-  project
+  clientHostBucketId
 });
 
 new CloudfrontStack(app, 'CloudfrontStack', {

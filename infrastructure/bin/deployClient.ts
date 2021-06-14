@@ -1,17 +1,13 @@
-// import {
-//   S3Client,
-  
-// } from '@aws-sdk/client-s3';
+import {
+  ListBucketsCommand,
+  // ListBucketsCommandOutput,
+  S3Client
+} from '@aws-sdk/client-s3';
 
-// import config from '../config';
+const s3 = new S3Client({});
 
-// const {
-//   profile,
-//   region
-// } = config;
-
-// process.env.AWS_PROFILE = profile;
-
-// const s3 = new S3Client({
-//   region
-// });
+export async function deployClient(): Promise<void> {
+  const listBucketsCommand = new ListBucketsCommand({});
+  const buckets = await s3.send(listBucketsCommand);
+  console.log('bucketsOutput:', buckets);
+};

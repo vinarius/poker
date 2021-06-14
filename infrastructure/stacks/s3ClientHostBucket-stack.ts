@@ -9,7 +9,7 @@ import {
 import {Bucket} from '@aws-cdk/aws-s3';
 
 interface ClientHostBucketProps extends StackProps {
-  project: string;
+  clientHostBucketId: string;
 }
 
 export class S3ClientHostBucketStack extends Stack {
@@ -17,21 +17,17 @@ export class S3ClientHostBucketStack extends Stack {
     super(scope, id, props);
 
     const {
-      project
+      clientHostBucketId,
     } = props;
 
-    new Bucket(this, `kraus-${project}-clienthostbucket`, {
+    new Bucket(this, clientHostBucketId, {
       // TODO: look up best practices here
       autoDeleteObjects: true,
       removalPolicy: RemovalPolicy.DESTROY,
       publicReadAccess: true,
-      // TODO: set to true once hooked up to cloudfront
-      enforceSSL: false,
-      // TODO: cdk expects index.html to be available in the bucket - throws an error on stack create
-      // Not sure how to create bucket and put build on stack initialize
-      // websiteIndexDocument: resolve(__dirname, '..', '..', 'dist', 'client', 'index.html'),
+      enforceSSL: true,
       websiteIndexDocument: 'index.html',
-      bucketName: `kraus-${project}-clienthostbucket`
+      bucketName: clientHostBucketId
     });
   }
 }

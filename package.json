@@ -5,18 +5,18 @@
   "main": "index.js",
   "scripts": {
     "build": "run-s clean build:* move",
-    "build:client": "npm run clean:client && cd client && npm run build",
     "build:backend": "npm run clean:backend && cd infrastructure && npm run build",
+    "build:client": "npm run clean:client && cd client && npm run build",
     "clean": "run-p clean:* && rm -rf dist && mkdir dist",
-    "clean:client": "rm -rf ./client/build",
     "clean:backend": "rm -rf ./infrastructure/dist",
+    "clean:client": "rm -rf ./client/build",
     "deploy": "cd infrastructure && npm run deploy",
     "move": "run-p move:*",
-    "move:client": "cp ./client/build dist/client -r",
     "move:backend": "cp ./infrastructure/dist ./dist/infrastructure -r",
+    "move:client": "cp ./client/build dist/client -r",
     "test": "run-p test:*",
-    "test:client": "echo \"Testing the client is not yet implemented\"",
-    "test:backend": "echo \"Testing the infrastructrue is not yet implemented\""
+    "test:backend": "echo \"Testing the infrastructrue is not yet implemented\"",
+    "test:client": "echo \"Testing the client is not yet implemented\""
   },
   "repository": {
     "type": "git",

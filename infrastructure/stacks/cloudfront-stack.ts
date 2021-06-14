@@ -1,5 +1,6 @@
 import {
   Construct,
+  CfnOutput,
   StackProps,
   Stack
 } from '@aws-cdk/core';
@@ -20,7 +21,7 @@ export class CloudfrontStack extends Stack {
       project
     } = props;
 
-    new CloudFrontWebDistribution(this, `kraus-${project}-cloudfrontdistro`, {
+    const cloudfrontDistro = new CloudFrontWebDistribution(this, `kraus-${project}-cloudfrontdistro`, {
       comment: `cloudfrontTesting`,
       originConfigs: [
         {
@@ -34,6 +35,11 @@ export class CloudfrontStack extends Stack {
           }
         }
       ]
+    });
+
+    new CfnOutput(this, 'cloudfrontdistroOutput', {
+      value: cloudfrontDistro.distributionDomainName,
+      description: 'Domain name of the cloudfront distribution'
     });
   }
 }
