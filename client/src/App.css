@@ -101,6 +101,10 @@ main {
     margin: 0px 0.25rem;
 }
 
+.space5 {
+  height: 5rem;
+}
+
 .table-center {
     display: flex;
     flex-direction: column;
