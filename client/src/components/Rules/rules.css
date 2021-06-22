@@ -1,5 +1,12 @@
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .rules-text-section {
   margin: 2rem 5rem;
+  width: calc(100% - 3rem)
 }
 
 @media screen and (max-width: 768px) {

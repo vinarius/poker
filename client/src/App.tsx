@@ -7,7 +7,8 @@ import 'primeicons/primeicons.css';
 
 import {StateProvider} from './components/StateProvider/stateProvider';
 import {Container} from './components/container';
-import {Rules} from './components/Rules/rules';
+
+document.title = 'Poker';
 
 function App() {
   return (
