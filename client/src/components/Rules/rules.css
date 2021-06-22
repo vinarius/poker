@@ -4,8 +4,20 @@
   align-items: center;
 }
 
+.hand-ranking-category-links-container {
+  margin: 1rem;
+}
+
+ol {
+  list-style: decimal;
+}
+
+.text-link {
+  margin: 0.5rem;
+}
+
 .rules-text-section {
-  margin: 2rem 5rem;
+  margin: 2rem;
   width: calc(100% - 3rem)
 }
 

@@ -16,15 +16,28 @@ import sevenOfSpades from '../../assets/Playing_Cards/7S.png';
 import sixOfSpades from '../../assets/Playing_Cards/6S.png';
 import fiveOfSpades from '../../assets/Playing_Cards/5S.png';
 import fourOfSpades from '../../assets/Playing_Cards/4S.png';
+import twoOfSpades from '../../assets/Playing_Cards/2S.png';
 
 import kingOfHearts from '../../assets/Playing_Cards/KH.png';
 import jackOfHearts from '../../assets/Playing_Cards/JH.png';
+import tenOfHearts from '../../assets/Playing_Cards/10H.png';
+import nineOfHearts from '../../assets/Playing_Cards/9H.png';
 import eightOfHearts from '../../assets/Playing_Cards/8H.png';
+import fourOfHearts from '../../assets/Playing_Cards/4H.png';
+import twoOfHearts from '../../assets/Playing_Cards/2H.png';
 
+import aceOfClubs from '../../assets/Playing_Cards/AC.png';
 import kingOfClubs from '../../assets/Playing_Cards/KC.png';
 import jackOfClubs from '../../assets/Playing_Cards/JC.png';
+import tenOfClubs from '../../assets/Playing_Cards/10C.png';
+import eightOfClubs from '../../assets/Playing_Cards/8C.png';
+import fiveOfClubs from '../../assets/Playing_Cards/5C.png';
 
 import kingOfDiamonds from '../../assets/Playing_Cards/KD.png';
+import jackOfDiamonds from '../../assets/Playing_Cards/JD.png';
+import eightOfDiamonds from '../../assets/Playing_Cards/8D.png';
+import fourOfDiamonds from '../../assets/Playing_Cards/4D.png';
+import twoOfDiamonds from '../../assets/Playing_Cards/2D.png';
 
 const cardHeight = 60;
 
@@ -37,9 +50,9 @@ export const Rules: FunctionComponent = () => {
       <div className='space2'></div>
 
       <ol>
-        <a href='#texas-holdem-definition'><li>What is Texas hold'em poker</li></a>
-        <a href='#texas-holdem-objective'><li>Objective</li></a>
-        <a href='#texas-holdem-hands'><li>Texas hold'em hands</li></a>
+        <a href='#texas-holdem-definition'><li className='text-link'>What is Texas hold'em poker</li></a>
+        <a href='#texas-holdem-objective'><li className='text-link'>Objective</li></a>
+        <a href='#texas-holdem-hands'><li className='text-link'>Texas hold'em hands</li></a>
       </ol>
 
       <div className='space2'></div>
@@ -72,29 +85,25 @@ export const Rules: FunctionComponent = () => {
       </div>
 
       <div className='rules-text-section'>
-        <h1>Hand-ranking categories</h1>
+        <h1>Hand-ranking Categories</h1>
         <hr />
-        <ul>
-          <a href='#hand-rank-royal-flush'><li>Royal Flush</li></a>
-          <a href='#hand-rank-straight-flush'><li>Straight Flush</li></a>
-          <a href='#hand-rank-four-of-a-kind'><li>Four of a Kind</li></a>
-          <a href='#hand-rank-full-house'><li>Full House</li></a>
-          <a href='#hand-rank-flush'><li>Flush</li></a>
-          <a href='#hand-rank-straight'><li>Straight</li></a>
-          <a href='#hand-rank-three-of-a-kind'><li>Three of a Kind</li></a>
-          <a href='#hand-rank-two-pair'><li>Two Pair</li></a>
-          <a href='#hand-rank-one-pair'><li>One Pair</li></a>
-          <a href='#hand-rank-high-card'><li>High Card</li></a>
-        </ul>
-
-        <div className='space1'></div>
-
-        <h1>Quick Reference</h1>
+        <ol className='hand-ranking-category-links-container'>
+          <a href='#hand-rank-royal-flush'><li className='text-link'>Royal Flush</li></a>
+          <a href='#hand-rank-straight-flush'><li className='text-link'>Straight Flush</li></a>
+          <a href='#hand-rank-four-of-a-kind'><li className='text-link'>Four of a Kind</li></a>
+          <a href='#hand-rank-full-house'><li className='text-link'>Full House</li></a>
+          <a href='#hand-rank-flush'><li className='text-link'>Flush</li></a>
+          <a href='#hand-rank-straight'><li className='text-link'>Straight</li></a>
+          <a href='#hand-rank-three-of-a-kind'><li className='text-link'>Three of a Kind</li></a>
+          <a href='#hand-rank-two-pair'><li className='text-link'>Two Pair</li></a>
+          <a href='#hand-rank-one-pair'><li className='text-link'>One Pair</li></a>
+          <a href='#hand-rank-high-card'><li className='text-link'>High Card</li></a>
+        </ol>
         
         <div className='space1'></div>
 
         <div>
-          <div className='hand-ranking-example'>
+          <div id='hand-rank-royal-flush' className='hand-ranking-example'>
             <div className='hand-ranking-example-name'>Royal Flush</div>
             <div className='hand-ranking-example-cards'>
               <img src={aceOfSpades} height={cardHeight} />
@@ -103,8 +112,12 @@ export const Rules: FunctionComponent = () => {
               <img src={jackOfSpades} height={cardHeight} />
               <img src={tenOfSpades} height={cardHeight} />
             </div>
+            <p>Five cards of the same suit, ranked ace through ten.</p>
           </div>
-          <div className='hand-ranking-example'>
+
+          <div className='space2'></div>
+
+          <div id='hand-rank-straight-flush' className='hand-ranking-example'>
             <div className='hand-ranking-example-name'>Straight Flush</div>
             <div className='hand-ranking-example-cards'>
               <img src={nineOfSpades} height={cardHeight} />
@@ -113,8 +126,12 @@ export const Rules: FunctionComponent = () => {
               <img src={sixOfSpades} height={cardHeight} />
               <img src={fiveOfSpades} height={cardHeight} />
             </div>
+            <p>Five cards of the same suit and consecutively ranked.</p>
           </div>
-          <div className='hand-ranking-example'>
+
+          <div className='space2'></div>
+
+          <div id='hand-rank-four-of-a-kind' className='hand-ranking-example'>
             <div className='hand-ranking-example-name'>Four of a Kind</div>
             <div className='hand-ranking-example-cards'>
               <img src={kingOfSpades} height={cardHeight} />
@@ -123,8 +140,12 @@ export const Rules: FunctionComponent = () => {
               <img src={kingOfDiamonds} height={cardHeight} />
               <img src={fourOfSpades} height={cardHeight} />
             </div>
+            <p>Four cards of the same rank.</p>
           </div>
-          <div className='hand-ranking-example'>
+
+          <div className='space2'></div>
+
+          <div id='hand-rank-full-house' className='hand-ranking-example'>
             <div className='hand-ranking-example-name'>Full House</div>
             <div className='hand-ranking-example-cards'>
               <img src={jackOfSpades} height={cardHeight} />
@@ -133,68 +154,95 @@ export const Rules: FunctionComponent = () => {
               <img src={eightOfSpades} height={cardHeight} />
               <img src={eightOfHearts} height={cardHeight} />
             </div>
+            <p>Three cards of the same rank and two more cards of the same rank.</p>
           </div>
-          <div className='hand-ranking-example'>
+
+          <div className='space2'></div>
+
+          <div id='hand-rank-flush' className='hand-ranking-example'>
             <div className='hand-ranking-example-name'>Flush</div>
             <div className='hand-ranking-example-cards'>
-              {/* TODO: pick up here */}
               <img src={aceOfSpades} height={cardHeight} />
-              <img src={kingOfSpades} height={cardHeight} />
-              <img src={queenOfSpades} height={cardHeight} />
               <img src={jackOfSpades} height={cardHeight} />
-              <img src={tenOfSpades} height={cardHeight} />
+              <img src={eightOfSpades} height={cardHeight} />
+              <img src={fiveOfSpades} height={cardHeight} />
+              <img src={twoOfSpades} height={cardHeight} />
             </div>
+            <p>Any five cards of the same suit.</p>
           </div>
-          <div className='hand-ranking-example'>
+
+          <div className='space2'></div>
+
+          <div id='hand-rank-straight' className='hand-ranking-example'>
             <div className='hand-ranking-example-name'>Straight</div>
             <div className='hand-ranking-example-cards'>
-              <img src={aceOfSpades} height={cardHeight} />
-              <img src={kingOfSpades} height={cardHeight} />
               <img src={queenOfSpades} height={cardHeight} />
-              <img src={jackOfSpades} height={cardHeight} />
-              <img src={tenOfSpades} height={cardHeight} />
+              <img src={jackOfDiamonds} height={cardHeight} />
+              <img src={tenOfHearts} height={cardHeight} />
+              <img src={nineOfSpades} height={cardHeight} />
+              <img src={eightOfDiamonds} height={cardHeight} />
             </div>
+            <p>Any five cards consecutively ranked.</p>
           </div>
-          <div className='hand-ranking-example'>
+
+          <div className='space2'></div>
+
+          <div id='hand-rank-three-of-a-kind' className='hand-ranking-example'>
             <div className='hand-ranking-example-name'>Three of a Kind</div>
             <div className='hand-ranking-example-cards'>
-              <img src={aceOfSpades} height={cardHeight} />
+              <img src={eightOfClubs} height={cardHeight} />
+              <img src={eightOfSpades} height={cardHeight} />
+              <img src={eightOfDiamonds} height={cardHeight} />
               <img src={kingOfSpades} height={cardHeight} />
-              <img src={queenOfSpades} height={cardHeight} />
-              <img src={jackOfSpades} height={cardHeight} />
-              <img src={tenOfSpades} height={cardHeight} />
+              <img src={fourOfHearts} height={cardHeight} />
             </div>
+            <p>Three cards of the same rank.</p>
           </div>
-          <div className='hand-ranking-example'>
+
+          <div className='space2'></div>
+
+          <div id='hand-rank-two-pair' className='hand-ranking-example'>
             <div className='hand-ranking-example-name'>Two Pair</div>
             <div className='hand-ranking-example-cards'>
               <img src={aceOfSpades} height={cardHeight} />
-              <img src={kingOfSpades} height={cardHeight} />
-              <img src={queenOfSpades} height={cardHeight} />
-              <img src={jackOfSpades} height={cardHeight} />
-              <img src={tenOfSpades} height={cardHeight} />
+              <img src={aceOfClubs} height={cardHeight} />
+              <img src={jackOfDiamonds} height={cardHeight} />
+              <img src={jackOfClubs} height={cardHeight} />
+              <img src={sevenOfSpades} height={cardHeight} />
             </div>
+            <p>Two cards of the same rank and two more cards of the same rank.</p>
           </div>
-          <div className='hand-ranking-example'>
+
+          <div className='space2'></div>
+
+          <div id='hand-rank-one-pair' className='hand-ranking-example'>
             <div className='hand-ranking-example-name'>One Pair</div>
             <div className='hand-ranking-example-cards'>
-              <img src={aceOfSpades} height={cardHeight} />
-              <img src={kingOfSpades} height={cardHeight} />
-              <img src={queenOfSpades} height={cardHeight} />
-              <img src={jackOfSpades} height={cardHeight} />
-              <img src={tenOfSpades} height={cardHeight} />
+              <img src={tenOfHearts} height={cardHeight} />
+              <img src={tenOfClubs} height={cardHeight} />
+              <img src={nineOfHearts} height={cardHeight} />
+              <img src={fourOfDiamonds} height={cardHeight} />
+              <img src={twoOfDiamonds} height={cardHeight} />
             </div>
+            <p>Two cards of the same rank.</p>
           </div>
-          <div className='hand-ranking-example'>
+
+          <div className='space2'></div>
+
+          <div id='hand-rank-high-card' className='hand-ranking-example'>
             <div className='hand-ranking-example-name'>High Card</div>
             <div className='hand-ranking-example-cards'>
-              <img src={aceOfSpades} height={cardHeight} />
-              <img src={kingOfSpades} height={cardHeight} />
-              <img src={queenOfSpades} height={cardHeight} />
-              <img src={jackOfSpades} height={cardHeight} />
+              <img src={aceOfClubs} height={cardHeight} />
+              <img src={jackOfDiamonds} height={cardHeight} />
               <img src={tenOfSpades} height={cardHeight} />
+              <img src={fiveOfClubs} height={cardHeight} />
+              <img src={twoOfHearts} height={cardHeight} />
             </div>
+            <p>Five unmatched cards. This example would be referred to as "Ace-high."</p>
           </div>
+
+          <div className='space2'></div>
+
         </div>
       </div>
 
