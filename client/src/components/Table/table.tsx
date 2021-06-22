@@ -296,7 +296,10 @@ export const Table: FunctionComponent = () => {
                         </div>
                         <div className='padding-seven-half-top-px'>
                             <div className="container-center-items">
-                                <Button className='player-game-action-button' onClick={()=>{ showToast('info', 'info message', 'Check feature under construction :)') }}>Check</Button>
+                                <Button className='player-game-action-button' onClick={()=>{
+                                    // showToast('info', 'info message', 'Check feature under construction :)')
+                                    console.log('i clicked the check button');
+                                }}>Check</Button>
                             </div>
                             <div className="container-center-items">
                                 <Button className='player-game-action-button' onClick={()=>{ showToast('info', 'info message', 'Bet feature under construction :)') }}>Bet</Button>

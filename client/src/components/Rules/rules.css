@@ -1,0 +1,32 @@
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hr-width {
+  width: calc(100% - 3rem);
+}
+
+.m-1 {
+  margin: 1rem;
+}
+
+ol {
+  list-style: decimal;
+}
+
+.text-link {
+  margin: 0.5rem;
+}
+
+.rules-text-section {
+  margin: 2rem;
+  width: calc(100% - 3rem)
+}
+
+@media screen and (max-width: 768px) {
+  .rules-text-section {
+    margin: 2rem;
+  } 
+}
