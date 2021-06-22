@@ -4,7 +4,11 @@
   align-items: center;
 }
 
-.hand-ranking-category-links-container {
+.hr-width {
+  width: calc(100% - 3rem);
+}
+
+.m-1 {
   margin: 1rem;
 }
 

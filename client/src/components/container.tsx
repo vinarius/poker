@@ -19,7 +19,7 @@ export const Container: FunctionComponent = () => {
     <div className='App'>
       <Router>
         <Switch>
-          <Route path='/rules'>
+          <Route path='/howtoplay'>
             <Rules />
           </Route>
           <Route path='/'>

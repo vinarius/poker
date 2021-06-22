@@ -49,10 +49,17 @@ export const Rules: FunctionComponent = () => {
 
       <div className='space2'></div>
 
+      <h1>How to Play</h1>
+      <hr className='hr-width' />
+
+      <div className='space1'></div>
+
       <ol>
         <a href='#texas-holdem-definition'><li className='text-link'>What is Texas hold'em poker</li></a>
         <a href='#texas-holdem-objective'><li className='text-link'>Objective</li></a>
         <a href='#texas-holdem-hands'><li className='text-link'>Texas hold'em hands</li></a>
+        <a href='#texas-holdem-dealer-button'><li className='text-link'>The Dealer Button</li></a>
+        <a href='#texas-holdem-streets'><li className='text-link'>Hand Streets</li></a>
       </ol>
 
       <div className='space2'></div>
@@ -87,7 +94,7 @@ export const Rules: FunctionComponent = () => {
       <div className='rules-text-section'>
         <h1>Hand-ranking Categories</h1>
         <hr />
-        <ol className='hand-ranking-category-links-container'>
+        <ol className='m-1'>
           <a href='#hand-rank-royal-flush'><li className='text-link'>Royal Flush</li></a>
           <a href='#hand-rank-straight-flush'><li className='text-link'>Straight Flush</li></a>
           <a href='#hand-rank-four-of-a-kind'><li className='text-link'>Four of a Kind</li></a>
@@ -244,6 +251,41 @@ export const Rules: FunctionComponent = () => {
           <div className='space2'></div>
 
         </div>
+      </div>
+
+      <div className='rules-text-section'>
+        <h1 id='texas-holdem-dealer-button'>The Dealer Button</h1>
+        <hr />
+
+        <div className='space1'></div>
+
+        <p>The button determines which player at the table is the acting dealer.</p>
+
+        <div className='space1'></div>
+
+        <p>The play moves clockwise around the table, starting to the left of the dealer button. The 'button' is a round disc that sits in front of a player and is rotated one seat to the left every hand. When playing in casinos and poker rooms, the player with the dealer button doesn't deal the cards (the poker room hires someone to do that). When you play poker at home with friends, the player with the button usually deals the hands. The first two players sitting to the immediate left of the button are required to post a 'small blind' and a 'big blind' to initiate the betting.</p>
+      </div>
+
+      <div className='rules-text-section'>
+        <h1 id='texas-holdem-streets'>Hand Streets</h1>
+        <hr />
+
+        <div className='space1'></div>
+
+        <p>Each hand progress in multiple phases, or 'streets'.</p>
+
+        <div className='space1'></div>
+
+        <ol className='m-1'>
+          <li className='text-link'>Preflop</li>
+          <li className='text-link'>Flop</li>
+          <li className='text-link'>Turn</li>
+          <li className='text-link'>River</li>
+        </ol>
+
+        <div className='space1'></div>
+
+        <p>The button determines which player at the table is the acting dealer. In Texas hold'em, the player on button, or last active player closest to the button, receives the last action on all post-flop streets of play. While the dealer button dictates which players have to post the small and big blinds, it also determines where the dealing of the cards begin. The player to the immediate left of the dealer button in the small blind receives the first card and then the dealer pitches cards around the table in a clockwise motion from player to player until each participant has received two starting cards.</p>
       </div>
 
       <div className='space5'></div>

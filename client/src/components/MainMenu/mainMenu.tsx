@@ -30,7 +30,7 @@ export const MainMenu: FunctionComponent = () => {
             <Button className="main-menu-button" onClick={()=>{ showToast('info', 'info message', 'Friends feature under construction :)')} }>Friends</Button>
             <Button className="main-menu-button" onClick={()=>{ showToast('info', 'info message', 'Leaderboard feature under construction :)')} }>Leaderboard</Button>
             <Button className="main-menu-button" onClick={()=>{ showToast('info', 'info message', 'Settings feature under construction :)')} }>Settings</Button>
-            <Link to='/rules'><Button className="main-menu-button" onClick={()=>{} }>Rules</Button></Link>
+            <Link to='/howtoplay'><Button className="main-menu-button" onClick={()=>{} }>How to Play</Button></Link>
         </div>
     );
 };
