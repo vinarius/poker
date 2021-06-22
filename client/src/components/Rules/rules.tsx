@@ -137,6 +137,7 @@ export const Rules: FunctionComponent = () => {
           <div className='hand-ranking-example'>
             <div className='hand-ranking-example-name'>Flush</div>
             <div className='hand-ranking-example-cards'>
+              {/* TODO: pick up here */}
               <img src={aceOfSpades} height={cardHeight} />
               <img src={kingOfSpades} height={cardHeight} />
               <img src={queenOfSpades} height={cardHeight} />
