@@ -43,7 +43,9 @@ export const Rules: FunctionComponent = () => {
       <div className='rules-text-section'>
         <h1 id='texas-holdem-hands'>Texas hold'em hands</h1>
         <div className='space1'></div>
-        <p>The texas holdem hands section will go here</p>
+        <p>Each hand has a rank, which is compared against the ranks of other hands participating in the showdown to decide who wins the pot. Each hand belongs to a category determined by the patterns formed by its cards. A hand in a higher-ranking category always ranks higher than a hand in a lower-ranking category. A hand is ranked within its category using the ranks of its cards. Individual cards are ranked, from highest to lowest: A, K, Q, J, 10, 9, 8, 7, 6, 5, 4, 3 and 2. Suits are not ranked, so hands that differ by suit alone are of equal rank.</p>
+        <div className='space1'></div>
+        <p>There are nine categories of hand when using a standard 52-card deck, except under ace-to-five low rules where straights, flushes and straight flushes are not recognized. An additional category, five of a kind, exists when using one or more wild cards. The fewer hands a category contains, the higher its rank.</p>
       </div>
     </div>
   );
