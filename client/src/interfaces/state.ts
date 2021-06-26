@@ -1,9 +1,11 @@
-import { ICard } from './card';
+import { Card } from './card';
+import {Player} from './player';
 
-export interface IState {
+export interface State {
     inGame: Boolean;
-    deck: ICard[];
-    // river: ICard[];
+    deck: Card[];
+    // river: Card[];
     chatInput: string;
-    chatHistory: string[] // update later
+    chatHistory: string[];
+    playerData: Player[];
 }

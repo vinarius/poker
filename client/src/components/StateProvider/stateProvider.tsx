@@ -1,19 +1,11 @@
 import React, { createContext, useReducer } from 'react';
 import myReducer from './myReducer';
-import stateActions from './stateActions';
-import ShuffleDeck from '../../services/shuffleDeck';
-import { IState } from '../../interfaces/state';
+import {stateActions} from './stateActions';
+import {defaultState} from './defaultState';
 
 export const MyContext = createContext({});
 
 export const StateProvider = (props: any) => {
-
-    const defaultState: IState = {
-        inGame: false,
-        deck: ShuffleDeck(),
-        chatInput: '',
-        chatHistory: []
-    };
 
     const [state, dispatch] = useReducer(myReducer, defaultState);
 
@@ -41,20 +33,8 @@ export const StateProvider = (props: any) => {
         dispatch({ type: stateActions.UPDATE_CHAT_HISTORY, payload: newChatHistory});
     };
 
-    const {
-        inGame,
-        tableSize,
-        deck,
-        chatInput,
-        chatHistory
-    } = state;
-
     const providerValue = {
-        inGame,
-        tableSize,
-        deck,
-        chatInput,
-        chatHistory,
+        ...state,
         shuffleDeck,
         drawCard,
         enterGame,

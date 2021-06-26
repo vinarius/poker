@@ -1,6 +1,9 @@
-export interface player {
-    name: string;
-    cash: number;
-    cardOne: null|string;
-    cardTWo: null|string;
+export interface Player {
+  cardOne: null|string;
+  cardTwo: null|string;
+  cash: number;
+  isSpectator: boolean;
+  name: string;
+  playerId: string;
+  seatPosition: number;
 }

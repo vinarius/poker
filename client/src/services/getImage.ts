@@ -1,4 +1,4 @@
-import { ICard } from '../interfaces/card';
+import { Card } from '../interfaces/card';
 
 import twoOfSpades from '../assets/Playing_Cards/2S.png';
 import twoOfHearts from '../assets/Playing_Cards/2H.png';
@@ -53,7 +53,7 @@ import aceOfHearts from '../assets/Playing_Cards/AH.png';
 import aceOfClubs from '../assets/Playing_Cards/AC.png';
 import aceOfDiamonds from '../assets/Playing_Cards/AD.png';
 
-export function convertToCardImageString(card: ICard): string {
+export function convertToCardImageString(card: Card): string {
     let value: string;
     switch(card.value) {
         case 'jack':

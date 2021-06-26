@@ -1,7 +1,7 @@
-export interface ICard {
-    suit: Suit,
-    value: NumericValue | FaceCardValue,
-    isVisible: Boolean
+export interface Card {
+    suit: Suit;
+    rank: NumericValue | FaceCardValue;
+    isVisible: Boolean;
 }
 
 export enum Suit {
