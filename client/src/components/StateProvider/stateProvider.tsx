@@ -3,11 +3,11 @@ import myReducer from './myReducer';
 import {stateActions} from './stateActions';
 import {defaultState} from './defaultState';
 
-export const MyContext = createContext({});
+export const MyContext = createContext<any>({});
 
 export const StateProvider = (props: any) => {
 
-    const [state, dispatch] = useReducer(myReducer, defaultState);
+    const [state, dispatch] = useReducer<any>(myReducer, defaultState);
 
     const shuffleDeck: ()=> void = () => {
         dispatch({ type: stateActions.SHUFFLE_DECK });

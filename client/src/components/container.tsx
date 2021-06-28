@@ -13,7 +13,7 @@ import {Rules} from './Rules/rules';
 
 export const Container: FunctionComponent = () => {
 
-  const { inGame } = useContext(MyContext);
+  const { inGame } = useContext<any>(MyContext);
 
   return (
     <div className='App'>

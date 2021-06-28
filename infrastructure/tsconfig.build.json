@@ -2,10 +2,10 @@
   "extends": "./tsconfig.json",
   "include": ["./bin/**/*"],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "**/*.d.ts"
   ],
   "compilerOptions": {
-    "outDir": "dist",
-    "skipLibCheck": true
+    "outDir": "dist"
   }
 }

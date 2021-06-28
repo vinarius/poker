@@ -10,10 +10,12 @@ import {Container} from './components/container';
 
 document.title = 'Poker';
 
-export const App = () => {
+function App() {
   return (
     <StateProvider>
       <Container />
     </StateProvider>
   );
 }
+
+export default App;
