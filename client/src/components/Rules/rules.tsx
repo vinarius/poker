@@ -113,11 +113,11 @@ export const Rules: FunctionComponent = () => {
           <div id='hand-rank-royal-flush' className='hand-ranking-example'>
             <div className='hand-ranking-example-name'>Royal Flush</div>
             <div className='hand-ranking-example-cards'>
-              <img src={aceOfSpades} height={cardHeight} />
-              <img src={kingOfSpades} height={cardHeight} />
-              <img src={queenOfSpades} height={cardHeight} />
-              <img src={jackOfSpades} height={cardHeight} />
-              <img src={tenOfSpades} height={cardHeight} />
+              <img alt='Ace of spades playing card' src={aceOfSpades} height={cardHeight} />
+              <img alt='King of spades playing card' src={kingOfSpades} height={cardHeight} />
+              <img alt='Queen of spades playing card' src={queenOfSpades} height={cardHeight} />
+              <img alt='Jack of spades playing card' src={jackOfSpades} height={cardHeight} />
+              <img alt='Ten of spades playing card' src={tenOfSpades} height={cardHeight} />
             </div>
             <p>Five cards of the same suit, ranked ace through ten.</p>
           </div>
@@ -127,11 +127,11 @@ export const Rules: FunctionComponent = () => {
           <div id='hand-rank-straight-flush' className='hand-ranking-example'>
             <div className='hand-ranking-example-name'>Straight Flush</div>
             <div className='hand-ranking-example-cards'>
-              <img src={nineOfSpades} height={cardHeight} />
-              <img src={eightOfSpades} height={cardHeight} />
-              <img src={sevenOfSpades} height={cardHeight} />
-              <img src={sixOfSpades} height={cardHeight} />
-              <img src={fiveOfSpades} height={cardHeight} />
+              <img alt='Nine of spades playing card' src={nineOfSpades} height={cardHeight} />
+              <img alt='Eight of spades playing card' src={eightOfSpades} height={cardHeight} />
+              <img alt='Seven of spades playing card' src={sevenOfSpades} height={cardHeight} />
+              <img alt='Six of spades playing card' src={sixOfSpades} height={cardHeight} />
+              <img alt='Five of spades playing card' src={fiveOfSpades} height={cardHeight} />
             </div>
             <p>Five cards of the same suit and consecutively ranked.</p>
           </div>
@@ -141,11 +141,11 @@ export const Rules: FunctionComponent = () => {
           <div id='hand-rank-four-of-a-kind' className='hand-ranking-example'>
             <div className='hand-ranking-example-name'>Four of a Kind</div>
             <div className='hand-ranking-example-cards'>
-              <img src={kingOfSpades} height={cardHeight} />
-              <img src={kingOfHearts} height={cardHeight} />
-              <img src={kingOfClubs} height={cardHeight} />
-              <img src={kingOfDiamonds} height={cardHeight} />
-              <img src={fourOfSpades} height={cardHeight} />
+              <img alt='King of spades playing card' src={kingOfSpades} height={cardHeight} />
+              <img alt='King of hearts playing card' src={kingOfHearts} height={cardHeight} />
+              <img alt='King of clubs playing card' src={kingOfClubs} height={cardHeight} />
+              <img alt='King of diamonds playing card' src={kingOfDiamonds} height={cardHeight} />
+              <img alt='Four of spades playing card' src={fourOfSpades} height={cardHeight} />
             </div>
             <p>Four cards of the same rank.</p>
           </div>
@@ -155,11 +155,11 @@ export const Rules: FunctionComponent = () => {
           <div id='hand-rank-full-house' className='hand-ranking-example'>
             <div className='hand-ranking-example-name'>Full House</div>
             <div className='hand-ranking-example-cards'>
-              <img src={jackOfSpades} height={cardHeight} />
-              <img src={jackOfHearts} height={cardHeight} />
-              <img src={jackOfClubs} height={cardHeight} />
-              <img src={eightOfSpades} height={cardHeight} />
-              <img src={eightOfHearts} height={cardHeight} />
+              <img alt='Jack of spades playing card' src={jackOfSpades} height={cardHeight} />
+              <img alt='Jack of hearts playing card' src={jackOfHearts} height={cardHeight} />
+              <img alt='Jack of clubs playing card' src={jackOfClubs} height={cardHeight} />
+              <img alt='Eight of spades playing card' src={eightOfSpades} height={cardHeight} />
+              <img alt='Eight of hearts playing card' src={eightOfHearts} height={cardHeight} />
             </div>
             <p>Three cards of the same rank and two more cards of the same rank.</p>
           </div>
@@ -169,11 +169,11 @@ export const Rules: FunctionComponent = () => {
           <div id='hand-rank-flush' className='hand-ranking-example'>
             <div className='hand-ranking-example-name'>Flush</div>
             <div className='hand-ranking-example-cards'>
-              <img src={aceOfSpades} height={cardHeight} />
-              <img src={jackOfSpades} height={cardHeight} />
-              <img src={eightOfSpades} height={cardHeight} />
-              <img src={fiveOfSpades} height={cardHeight} />
-              <img src={twoOfSpades} height={cardHeight} />
+              <img alt='Ace of spades playing card' src={aceOfSpades} height={cardHeight} />
+              <img alt='Jack of spades playing card' src={jackOfSpades} height={cardHeight} />
+              <img alt='Eight of spades playing card' src={eightOfSpades} height={cardHeight} />
+              <img alt='Five of spades playing card' src={fiveOfSpades} height={cardHeight} />
+              <img alt='Two of spades playing card' src={twoOfSpades} height={cardHeight} />
             </div>
             <p>Any five cards of the same suit.</p>
           </div>
@@ -183,11 +183,11 @@ export const Rules: FunctionComponent = () => {
           <div id='hand-rank-straight' className='hand-ranking-example'>
             <div className='hand-ranking-example-name'>Straight</div>
             <div className='hand-ranking-example-cards'>
-              <img src={queenOfSpades} height={cardHeight} />
-              <img src={jackOfDiamonds} height={cardHeight} />
-              <img src={tenOfHearts} height={cardHeight} />
-              <img src={nineOfSpades} height={cardHeight} />
-              <img src={eightOfDiamonds} height={cardHeight} />
+              <img alt='Queen of spades playing card' src={queenOfSpades} height={cardHeight} />
+              <img alt='Jack of diamonds playing card' src={jackOfDiamonds} height={cardHeight} />
+              <img alt='Ten of hearts playing card' src={tenOfHearts} height={cardHeight} />
+              <img alt='Nine of spades playing card' src={nineOfSpades} height={cardHeight} />
+              <img alt='Eight of diamonds playing card' src={eightOfDiamonds} height={cardHeight} />
             </div>
             <p>Any five cards consecutively ranked.</p>
           </div>
@@ -197,11 +197,11 @@ export const Rules: FunctionComponent = () => {
           <div id='hand-rank-three-of-a-kind' className='hand-ranking-example'>
             <div className='hand-ranking-example-name'>Three of a Kind</div>
             <div className='hand-ranking-example-cards'>
-              <img src={eightOfClubs} height={cardHeight} />
-              <img src={eightOfSpades} height={cardHeight} />
-              <img src={eightOfDiamonds} height={cardHeight} />
-              <img src={kingOfSpades} height={cardHeight} />
-              <img src={fourOfHearts} height={cardHeight} />
+              <img alt='Eight of clubs playing card' src={eightOfClubs} height={cardHeight} />
+              <img alt='Eight of spades playing card' src={eightOfSpades} height={cardHeight} />
+              <img alt='Eight of diamonds playing card' src={eightOfDiamonds} height={cardHeight} />
+              <img alt='King of spades playing card' src={kingOfSpades} height={cardHeight} />
+              <img alt='Four of hearts playing card' src={fourOfHearts} height={cardHeight} />
             </div>
             <p>Three cards of the same rank.</p>
           </div>
@@ -211,11 +211,11 @@ export const Rules: FunctionComponent = () => {
           <div id='hand-rank-two-pair' className='hand-ranking-example'>
             <div className='hand-ranking-example-name'>Two Pair</div>
             <div className='hand-ranking-example-cards'>
-              <img src={aceOfSpades} height={cardHeight} />
-              <img src={aceOfClubs} height={cardHeight} />
-              <img src={jackOfDiamonds} height={cardHeight} />
-              <img src={jackOfClubs} height={cardHeight} />
-              <img src={sevenOfSpades} height={cardHeight} />
+              <img alt='Ace of spades playing card' src={aceOfSpades} height={cardHeight} />
+              <img alt='Ace of clubs playing card' src={aceOfClubs} height={cardHeight} />
+              <img alt='Jack of diamonds playing card' src={jackOfDiamonds} height={cardHeight} />
+              <img alt='Jack of clubs playing card' src={jackOfClubs} height={cardHeight} />
+              <img alt='Seven of spades playing card' src={sevenOfSpades} height={cardHeight} />
             </div>
             <p>Two cards of the same rank and two more cards of the same rank.</p>
           </div>
@@ -225,11 +225,11 @@ export const Rules: FunctionComponent = () => {
           <div id='hand-rank-one-pair' className='hand-ranking-example'>
             <div className='hand-ranking-example-name'>One Pair</div>
             <div className='hand-ranking-example-cards'>
-              <img src={tenOfHearts} height={cardHeight} />
-              <img src={tenOfClubs} height={cardHeight} />
-              <img src={nineOfHearts} height={cardHeight} />
-              <img src={fourOfDiamonds} height={cardHeight} />
-              <img src={twoOfDiamonds} height={cardHeight} />
+              <img alt='Ten of hearts playing card' src={tenOfHearts} height={cardHeight} />
+              <img alt='Ten of clubs playing card' src={tenOfClubs} height={cardHeight} />
+              <img alt='Nine of hearts playing card' src={nineOfHearts} height={cardHeight} />
+              <img alt='Four of diamonds playing card' src={fourOfDiamonds} height={cardHeight} />
+              <img alt='Two of diamonds playing card' src={twoOfDiamonds} height={cardHeight} />
             </div>
             <p>Two cards of the same rank.</p>
           </div>
@@ -239,11 +239,11 @@ export const Rules: FunctionComponent = () => {
           <div id='hand-rank-high-card' className='hand-ranking-example'>
             <div className='hand-ranking-example-name'>High Card</div>
             <div className='hand-ranking-example-cards'>
-              <img src={aceOfClubs} height={cardHeight} />
-              <img src={jackOfDiamonds} height={cardHeight} />
-              <img src={tenOfSpades} height={cardHeight} />
-              <img src={fiveOfClubs} height={cardHeight} />
-              <img src={twoOfHearts} height={cardHeight} />
+              <img alt='Ace of clubs playing card' src={aceOfClubs} height={cardHeight} />
+              <img alt='Jack of diamonds playing card' src={jackOfDiamonds} height={cardHeight} />
+              <img alt='Ten of spades playing card' src={tenOfSpades} height={cardHeight} />
+              <img alt='Five of clubs playing card' src={fiveOfClubs} height={cardHeight} />
+              <img alt='Two of hearts playing card' src={twoOfHearts} height={cardHeight} />
             </div>
             <p>Five unmatched cards. This example would be referred to as "Ace-high."</p>
           </div>
