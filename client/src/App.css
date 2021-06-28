@@ -76,6 +76,10 @@ main {
     border-radius: 5px;
 }
 
+p {
+  line-height: 1.1rem;
+}
+
 .player-cards {
     margin: 0.5rem;
 }
@@ -150,6 +154,20 @@ main {
 .table-side-column {
     height: 100%;
     width: 32.5%;
+}
+
+.text-playing-card-black {
+  background-color: #fff;
+  color: #000;
+  border-radius: 5px;
+  padding: 0.04rem;
+}
+
+.text-playing-card-red {
+  background-color: #fff;
+  color: red;
+  border-radius: 5px;
+  padding: 0.04rem;
 }
 
 .user-info {

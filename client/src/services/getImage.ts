@@ -54,22 +54,22 @@ import aceOfClubs from '../assets/Playing_Cards/AC.png';
 import aceOfDiamonds from '../assets/Playing_Cards/AD.png';
 
 export function convertToCardImageString(card: Card): string {
-    let value: string;
-    switch(card.value) {
+    let rank: string;
+    switch(card.rank) {
         case 'jack':
-            value = 'J';
+            rank = 'J';
             break;
         case 'queen':
-            value = 'Q';
+            rank = 'Q';
             break;
         case 'king':
-            value = 'K';
+            rank = 'K';
             break;
         case 'ace':
-            value = 'A';
+            rank = 'A';
             break;
         default:
-            value = card.value.toString();
+            rank = card.rank.toString();
             break;
     }
 
@@ -91,11 +91,11 @@ export function convertToCardImageString(card: Card): string {
             throw new Error('invalid suit detected');
     }
 
-    return `${value}${suit}`;
+    return `${rank}${suit}`;
 };
 
-export function getImage(cardValue: string): string {
-    switch(cardValue) {
+export function getImage(cardRank: string): string {
+    switch(cardRank) {
         case '2S':
             return twoOfSpades;
         case '2H':
@@ -201,18 +201,18 @@ export function getImage(cardValue: string): string {
         case 'AD':
             return aceOfDiamonds;
         default:
-            console.log('card value:', cardValue)
+            console.log('card rank:', cardRank)
             throw new Error('unknown card type, cannot get image');
     }
 }
 
 export function formatCashString(amount: number): string {
-    let cashValueSplit: string[] = amount.toString().split('');
+    let cashrankSplit: string[] = amount.toString().split('');
     const stringConstructorArr: string[] = [];
 
-    for(let i = cashValueSplit.length - 1; i >= 0; i--) {
+    for(let i = cashrankSplit.length - 1; i >= 0; i--) {
         if(stringConstructorArr.length % 3 === 0 && stringConstructorArr.length !== 0) stringConstructorArr.unshift(',');
-        stringConstructorArr.unshift(cashValueSplit[i]);
+        stringConstructorArr.unshift(cashrankSplit[i]);
     }
 
     stringConstructorArr.unshift('$');
