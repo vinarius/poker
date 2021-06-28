@@ -22,7 +22,7 @@ export class CloudfrontStack extends Stack {
     } = props;
 
     const cloudfrontDistro = new CloudFrontWebDistribution(this, `kraus-${project}-cloudfrontdistro`, {
-      comment: `cloudfrontTesting`,
+      comment: 'cloudfrontTesting',
       originConfigs: [
         {
           behaviors: [

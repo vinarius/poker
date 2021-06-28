@@ -1,6 +1,6 @@
-import { expect as expectCDK, matchTemplate, MatchStyle } from '@aws-cdk/assert';
-import * as cdk from '@aws-cdk/core';
-import {S3ClientHostBucketStack} from '../stacks/s3ClientHostBucket-stack';
+// import { expect as expectCDK, matchTemplate, MatchStyle } from '@aws-cdk/assert';
+// import * as cdk from '@aws-cdk/core';
+// import {S3ClientHostBucketStack} from '../stacks/s3ClientHostBucket-stack';
 
 // test('Empty Stack', () => {
 //     const app = new cdk.App();

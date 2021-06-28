@@ -10,4 +10,4 @@ export async function deployClient(): Promise<void> {
   const listBucketsCommand = new ListBucketsCommand({});
   const buckets = await s3.send(listBucketsCommand);
   console.log('bucketsOutput:', buckets);
-};
+}

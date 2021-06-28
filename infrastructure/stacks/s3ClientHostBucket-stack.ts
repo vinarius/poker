@@ -17,7 +17,7 @@ export class S3ClientHostBucketStack extends Stack {
     super(scope, id, props);
 
     const {
-      clientHostBucketId,
+      clientHostBucketId
     } = props;
 
     new Bucket(this, clientHostBucketId, {
