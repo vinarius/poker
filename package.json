@@ -19,7 +19,7 @@
     "move:backend": "cp ./infrastructure/dist ./dist/infrastructure -r",
     "move:client": "cp ./client/build dist/client -r",
     "test": "run-p test:*",
-    "test:backend": "echo \"Testing the infrastructrue is not yet implemented\"",
+    "test:backend": "echo \"Testing the infrastructure is not yet implemented\"",
     "test:client": "echo \"Testing the client is not yet implemented\""
   },
   "repository": {
