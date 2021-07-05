@@ -1,9 +1,17 @@
-import React, { createContext, useReducer } from 'react';
+import React, { createContext, useReducer, Dispatch } from 'react';
 import myReducer from './myReducer';
 import {stateActions} from './stateActions';
 import {defaultState} from './defaultState';
+import {State} from '../../interfaces/state';
 
-export const MyContext = createContext<any>({});
+// export const MyContext = createContext<any>({});
+export const MyContext = createContext<{
+  state: State;
+  dispatch: Dispatch<any>;
+}>({
+  state: defaultState,
+  dispatch: () => null
+});
 
 export const StateProvider = (props: any) => {
 
